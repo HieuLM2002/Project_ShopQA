@@ -62,16 +62,23 @@ setInterval(changeImage, 2500);
 
 // hàm xử lý trượt trái,phải phần aside
 let handleArrowMenuRight = (items) => {
+  let count = 0;
   let parentSellingContent = document.querySelector(items.parent);
-  let childSellingContents = parentSellingContent.querySelectorAll(items.child);
+  let childSellingContents = document.querySelectorAll(items.child);
   parentSellingContent.appendChild(childSellingContents[0]);
+  childSellingContents[count].classList.add(items.show);
+  childSellingContents[++count].classList.remove(items.show);
 };
 let handleArrowMenuLeft = (items) => {
   let parentSellingContent = document.querySelector(items.parent);
-  let childSellingContents = parentSellingContent.querySelectorAll(items.child);
+  let childSellingContents = document.querySelectorAll(items.child);
+  let count = childSellingContents.length - 1;
   parentSellingContent.prepend(
     childSellingContents[childSellingContents.length - 1]
   );
+  childSellingContents[count].classList.remove(items.show);
+
+  childSellingContents[0].classList.add(items.show);
 };
 
 let arrowMenuLeft = document.querySelector(".fa-angle-left");
@@ -79,6 +86,7 @@ arrowMenuLeft.addEventListener("click", () =>
   handleArrowMenuLeft({
     parent: ".selling-hot--content",
     child: ".shirt",
+    show: "show",
   })
 );
 
@@ -87,16 +95,18 @@ arrowMenuRight.addEventListener("click", () =>
   handleArrowMenuRight({
     parent: ".selling-hot--content",
     child: ".shirt",
+    show: "show",
   })
 );
 
-//xử lý trượt trái,phải phần product-items
+//xử lý trượt trái,phải phần sản phẩm mới
 
 let arrowDisplayProductLeft = document.querySelector(".arrow-product--left");
 arrowDisplayProductLeft.addEventListener("click", () =>
   handleArrowMenuLeft({
     parent: ".product-select--items",
     child: ".product-set",
+    show: "show-product",
   })
 );
 
@@ -105,6 +115,7 @@ arrowDisplayProductRight.addEventListener("click", () =>
   handleArrowMenuRight({
     parent: ".product-select--items",
     child: ".product-set",
+    show: "show-product",
   })
 );
 
@@ -114,6 +125,7 @@ arrowProductPromotionalLeft.addEventListener("click", () =>
   handleArrowMenuLeft({
     parent: ".product-promotion--display",
     child: ".set-promotion",
+    show: "show-promotion",
   })
 );
 
@@ -122,37 +134,73 @@ arrowProductPromotionalRight.addEventListener("click", () =>
   handleArrowMenuRight({
     parent: ".product-promotion--display",
     child: ".set-promotion",
+    show: "show-promotion",
   })
 );
+
 // sản phẩm nổi bật
-let arrowProductHighlightLeft = document.querySelector(".left-product--highlight");
+let arrowProductHighlightLeft = document.querySelector(
+  ".left-product--highlight"
+);
 arrowProductHighlightLeft.addEventListener("click", () =>
   handleArrowMenuLeft({
     parent: ".product-highlights--display",
     child: ".set-highlight",
+    show: "show-highlight",
   })
 );
 
-let arrowProductHighlightRight = document.querySelector(".right-product--highlight");
+let arrowProductHighlightRight = document.querySelector(
+  ".right-product--highlight"
+);
 arrowProductHighlightRight.addEventListener("click", () =>
   handleArrowMenuRight({
     parent: ".product-highlights--display",
     child: ".set-highlight",
+    show: "show-highlight",
   })
 );
+
 // sản phẩm mua nhiều
-let arrowProductBuyLotLeft = document.querySelector(".arrowleft-buylot--product");
+let arrowProductBuyLotLeft = document.querySelector(
+  ".arrowleft-buylot--product"
+);
 arrowProductBuyLotLeft.addEventListener("click", () =>
   handleArrowMenuLeft({
     parent: ".product-buylots--display",
     child: ".set-buylot",
+    show: "show-buylot",
   })
 );
 
-let arrowProductBuyLotRight = document.querySelector(".arrowright-buylot--product");
+let arrowProductBuyLotRight = document.querySelector(
+  ".arrowright-buylot--product"
+);
 arrowProductBuyLotRight.addEventListener("click", () =>
   handleArrowMenuRight({
     parent: ".product-buylots--display",
     child: ".set-buylot",
+    show: "show-buylot",
   })
 );
+
+//ngăn sự kiện load
+// let handleLoad = () =>{
+//   console.log('>>>>>>');
+//   // let clicked = event.target;
+  
+//    //clicked.
+//    preventDefault(); 
+// }
+// let navListParent = document.querySelector('.nav-list');
+// let navList = navListParent.querySelectorAll('a');
+// console.log('>>>>>>123',navList);
+//   navList.addEventListener('click',handleLoad);
+
+  
+//   item.addEventListener("click", handleLoad);
+// })
+
+
+
+

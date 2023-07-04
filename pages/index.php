@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/backHomePage.css"/>
     <script
       src="https://kit.fontawesome.com/d2a190de21.js"
       crossorigin="anonymous"
@@ -17,9 +18,7 @@
      include("../pages/menu.php");
      include("../pages/main.php");
      include("../pages/footer.php");
-?>
-      
-          
+?>         
     </div>
     <script src="../js/main.js"></script>
   </body>

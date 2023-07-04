@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.title_admin{
+    text-align: center;
+    font-size: 40px;
+    color: forestgreen;
+}
+.wrapper{
+    
+        border: 1px solid #000;
+        height: auto;
+        width : 90%;
+        margin: 0 auto;
+    
+}
+.admincp_list {
+    list-style-type: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background: #252525;
+    
+}
+.admincp_list li{
+    border: 1px solid white;
+    line-height: 48px;
+}
+.admincp_list li:hover{
+    background: #66a182;
+}
+.admincp_list a{
+    text-decoration: none;
+    color: white;
+    padding: 17px;
+}

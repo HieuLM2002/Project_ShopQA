@@ -1,0 +1,17 @@
+.back-mainpage{
+  border-bottom: #66a182;
+}
+.homePage{
+    text-decoration: none;
+    color: rgb(37, 34, 34);
+  }
+  .homePage:hover{
+    color: #66a182;
+}
+.introduce{
+  margin-top: 5%;
+  width: 128%;
+}
+.introduce .introduce-title{
+  font-size: 25px;
+}
