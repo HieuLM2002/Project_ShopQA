@@ -3,13 +3,14 @@
           <div class="nav">
             <ul class="nav-list">
               <li><a class="home-page active" href="index.php">Trang chủ</a></li>
-              <li><a class="nav-introduce" href="index.php?quanly=gioithieu">giới thiệu</a></li>
+              <li><a class="nav-introduce"  href="index.php?quanly=gioithieu">giới thiệu</a></li>
               <li><a class="nav-product" href="index.php?quanly=sanpham&id=1">sản phẩm</a></li>
               <li><a class="nav-news" href="index.php?quanly=tintuc">tin tức</a></li>
               <li><a class="nav-contact" href="index.php?quanly=lienhe">liên hệ</a></li>
             </ul>
           </div>
           <form>
+
             <div class="input-search">
               <input type="text" placeholder="Tìm kiếm..." />
               <button class="btn-icon--search">

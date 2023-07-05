@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="stylesheet" href="../style/backHomePage.css"/>
+    <link rel="stylesheet" href="../style/lienhe.css"/>
     <script
       src="https://kit.fontawesome.com/d2a190de21.js"
       crossorigin="anonymous"

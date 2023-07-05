@@ -10,6 +10,7 @@
     <h1 class="title_admin">Welcome to Admin</h1>
     <div class="wrapper">
     <?php
+     include("config/connect.php");
      include("modules/header.php");
      include("modules/menu.php");
      include("modules/main.php");
