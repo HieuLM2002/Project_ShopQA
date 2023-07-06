@@ -9,6 +9,7 @@ $query_lietke_sp= mysqli_query($connect,$sql_lietke_sp);
     <th>Tên sản phẩm</th>
     <th>Hình ảnh</th>
     <th>Gía sản phẩm</th>
+    <th>Giảm giá sản phẩm</th>
     <th>Số lượng</th>
     <th>Danh mục</th>
     <th>Mã sản phẩm</th>
@@ -26,6 +27,7 @@ $query_lietke_sp= mysqli_query($connect,$sql_lietke_sp);
     <td><?php echo $row['ten_sanpham'] ?></td>
     <td><img src="modules/quanlisp/uploads/<?php echo $row['hinhanh'] ?>"></td>
     <td><?php echo $row['gia_sanpham'] ?></td>
+    <td><?php echo $row['giamgia_sanpham'] ?></td>
     <td><?php echo $row['soluong'] ?></td>
     <td><?php echo $row['category_name'] ?></td>
     <td><?php echo $row['ma_sanpham'] ?></td>
@@ -34,8 +36,9 @@ $query_lietke_sp= mysqli_query($connect,$sql_lietke_sp);
       echo 'Kích hoạt';
     }else{
       echo 'Ẩn';
-    } ?></td>
-    <td>
+    } ?>
+    </td>
+    <td class="update-delete--product">
         <a href="modules/quanlisp/xuly.php?idsanpham=<?php echo $row['id_sanpham'] ?>" class="delete-product">DELETE</a> 
         <a href="?action=quanlisp&query=update&idsanpham=<?php echo $row['id_sanpham'] ?>" class="update-product">UPDATE</a>
     </td>

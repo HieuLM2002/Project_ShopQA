@@ -5,6 +5,7 @@ $sql = "CREATE TABLE IF NOT EXISTS tbl_product(
     ten_sanpham varchar(250),
     ma_sanpham varchar(250),
     gia_sanpham  varchar(250),
+    giamgia_sanpham  varchar(250),
     soluong  int,
     hinhanh  varchar(150),
     tomtat TINYTEXT ,
@@ -28,6 +29,10 @@ mysqli_query($connect,$sql);
   <tr>
     <th>Gía sản phẩm</th>
    <td><input type="text" name="giasanpham"/></td>
+  </tr>
+  <tr>
+    <th>Giảm giá sản phẩm</th>
+   <td><input type="text" name="giamgia"/></td>
   </tr>
   <tr>
     <th>Số lượng</th>

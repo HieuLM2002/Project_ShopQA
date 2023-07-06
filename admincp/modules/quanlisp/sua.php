@@ -21,6 +21,10 @@ $query_sua_sp= mysqli_query($connect,$sql_sua_sp);
    <td><input type="text" value="<?php echo $row['gia_sanpham'] ?>" name="giasanpham"/></td>
   </tr>
   <tr>
+    <th>Giảm giá sản phẩm</th>
+   <td><input type="text" value="<?php echo $row['giamgia_sanpham'] ?>" name="giamgiasanpham"/></td>
+  </tr>
+  <tr>
     <th>Số lượng</th>
    <td><input type="text" value="<?php echo $row['soluong'] ?>" name="soluong"/></td>
   </tr>

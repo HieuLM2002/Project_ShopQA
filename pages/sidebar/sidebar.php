@@ -1,79 +1,47 @@
+<?php
+      $sql_danhmuc="SELECT * FROM tbl_category ORDER BY category_id ASC";
+      $query_danhmuc = mysqli_query($connect,$sql_danhmuc);
+?>
+
 <div class="sidebar">
-          <div class="sidebar-title">
-            <i class="fa-solid fa-bars"></i>
-            <span>Danh mục sản phẩm</span>
-          </div>
-          <div>
-            <ul class="sidebar-list">
-              <li class="sidebar-list-select">
-                <div class="correction-arrow">
-                  <a href="index.php?quanly=sanpham=ao?id=1">Áo</a>
-                  <i class="fa-solid fa-caret-down"></i>
+            <div class="sidebar-title">
+              <i class="fa-solid fa-bars"></i>
+              <span>Danh mục sản phẩm</span>
+            </div>
+          <div class="list-category">
+            <?php
+              while($row_danhmuc =  mysqli_fetch_array($query_danhmuc)){
+            ?>
+              <ul class="sidebar-list">
+                <li class="sidebar-list-select">
+                  <div class="correction-arrow">
+                    <a href="index.php?quanly=danhmucsanpham&id=<?php echo $row_danhmuc['category_id'] ?>" class="product-category--name"><?php echo $row_danhmuc['category_name'] ?></a>
+                    <i class="fa-solid fa-caret-down"></i>
+                  </div>
+                  <ul class="dropdow-menu show">
+                    <li class="nav-item"><a href="#">Hàng mới về</a></li>
+                    <li class="nav-item"><a href="#">Hàng giảm giá</a></li>
+                  </ul>
+                </li>
+                <?php
+                  }
+                ?>
+                
+                <li>
+                  <a href="#">Sản phẩm nổi bật</a>
+                </li>
+                <li>
+                  <a href="">Sản phẩm bán chạy</a>
+                </li>
+                <div class="hide-product--sidebar show">
+                  <li>
+                    <a href="">Sản phẩm khuyến mãi</a>
+                  </li>
                 </div>
-                <ul class="dropdow-menu show">
-                  <li class="nav-item"><a href="#">Hàng mới về</a></li>
-                  <li class="nav-item"><a href="#">Hàng giảm giá</a></li>
-                </ul>
-              </li>
-
-              <li class="sidebar-list-select">
-                <div class="correction-arrow">
-                  <a href="index.php?quanly=sanpham=aokhoac?id=1">Áo khoác</a>
-                  <i class="fa-solid fa-caret-down"></i>
-                </div>
-
-                <ul class="dropdow-menu show">
-                  <li class="nav-item"><a href="#">Hàng mới về</a></li>
-                  <li class="nav-item"><a href="#">Hàng giảm giá</a></li>
-                </ul>
-              </li>
-
-              <li class="sidebar-list-select">
-                <div class="correction-arrow">
-                  <a href="index.php?quanly=sanpham=quan?id=1">Quần nữ & Jumpsuit</a>
-                  <i class="fa-solid fa-caret-down"></i>
-                </div>
-
-                <ul class="dropdow-menu show">
-                  <li class="nav-item"><a href="#">Hàng mới về</a></li>
-                  <li class="nav-item"><a href="#">Hàng giảm giá</a></li>
-                </ul>
-              </li>
-
-              <li class="sidebar-list-select">
-                <div class="correction-arrow">
-                  <a href="index.php?quanly=sanpham=dam?id=1">Đầm</a>
-                  <i class="fa-solid fa-caret-down"></i>
-                </div>
-
-                <ul class="dropdow-menu show">
-                  <li class="nav-item"><a href="">Hàng mới về</a></li>
-                  <li class="nav-item"><a href="">Hàng giảm giá</a></li>
-                </ul>
-              </li>
-
-              <li class="sidebar-list-select">
-                <div class="correction-arrow">
-                  <a href="index.php?quanly=sanpham=sanphammoi?id=1">Sản phẩm mới</a>
-                  <i class="fa-solid fa-caret-down"></i>
-                </div>
-
-                <ul class="dropdow-menu show">
-                  <li class="nav-item"><a href="">Hàng mới về</a></li>
-                  <li class="nav-item"><a href="">Hàng giảm giá</a></li>
-                </ul>
-              </li>
-
-              <li>
-                <a href="#">Sản nổi bật</a>
-              </li>
-              <li>
-                <a href="index.php?quanly=sanpham=sanphamnoibat?id=1">Sản phẩm bán chạy</a>
-              </li>
-              <li>
-                <a href="#">Xem thêm</a>
-              </li>
-            </ul>
+                <li>
+                  <p class="see-more">Xem thêm</p>
+                </li>
+              </ul>
           </div>
 
           <aside class="aside">
@@ -173,3 +141,4 @@
             </div>
           </aside>
         </div>
+  

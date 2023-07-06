@@ -1,10 +1,11 @@
+
 <div class="menu">
         <div class="menu-content">
           <div class="nav">
             <ul class="nav-list">
               <li><a class="home-page active" href="index.php">Trang chủ</a></li>
               <li><a class="nav-introduce"  href="index.php?quanly=gioithieu">giới thiệu</a></li>
-              <li><a class="nav-product" href="index.php?quanly=sanpham&id=1">sản phẩm</a></li>
+              <li><a class="nav-product" href="index.php?quanly=sanpham">sản phẩm</a></li>
               <li><a class="nav-news" href="index.php?quanly=tintuc">tin tức</a></li>
               <li><a class="nav-contact" href="index.php?quanly=lienhe">liên hệ</a></li>
             </ul>
@@ -36,20 +37,27 @@ if(isset($_GET['quanly'])){
  }elseif($tam=='tintuc'){
   $navTemp = $tam;
   $activeAfter = 'nav-news';
- }else{
+ }elseif($tam=='lienhe'){
   $navTemp = $tam;
   $activeAfter = 'nav-contact';
+ }else{
+  $navTemp = 'danhmucsanpham';
+  $activeAfter = null;
  }
  
 ?>
 <script>
   let nameTemp = "<?php echo $navTemp; ?>";
   let navAfter = '.<?php echo $activeAfter ?>';
-  if(nameTemp){
+  if(nameTemp && navAfter!=''){
   let activeBefore = document.querySelector('.home-page');
   activeBefore.classList.remove('active');
   let activeAfter = document.querySelector(navAfter);
   
   activeAfter.classList.add('active');
+  }
+  if(nameTemp=="danhmucsanpham" && navAfter ==""){
+    let activeBefore = document.querySelector('.home-page');
+    activeBefore.classList.remove('active');
   }
   </script>

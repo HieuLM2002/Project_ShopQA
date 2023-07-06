@@ -3,6 +3,7 @@
   $tensanpham = $_POST['tensanpham'];
   $masp = $_POST['masanpham'];
   $giasp = $_POST['giasanpham'];
+  $giamgiasp = $_POST['giamgiasanpham'];
   $soluong = $_POST['soluong'];
   $tomtat = $_POST['tomtat'];
   $noidung = $_POST['noidung'];
@@ -14,8 +15,8 @@
   $hinhanh = time().''.$hinhanh;
 
   if(isset($_POST['themsanpham'])){
-          $sql_them = "INSERT INTO tbl_product (ten_sanpham, ma_sanpham, gia_sanpham,soluong,hinhanh, tomtat, noidung,tinhtrang,category_id) VALUE 
-          (' $tensanpham','$masp','$giasp','$soluong','$hinhanh', '$tomtat','$noidung','$tinhtrang','$danhmuc')";
+          $sql_them = "INSERT INTO tbl_product (ten_sanpham, ma_sanpham, gia_sanpham,giamgia_sanpham,soluong,hinhanh, tomtat, noidung,tinhtrang,category_id) VALUE 
+          (' $tensanpham','$masp','$giasp','$giamgiasp','$soluong','$hinhanh', '$tomtat','$noidung','$tinhtrang','$danhmuc')";
           mysqli_query($connect,$sql_them);
           move_uploaded_file($hinhanh_tmp,'uploads/'.$hinhanh);
           header("location:../../index.php?action=quanlysanpham&query=them");
@@ -24,7 +25,7 @@
                 // sửa
                 move_uploaded_file($hinhanh_tmp,'uploads/'.$hinhanh);
                
-                $sql_them = "UPDATE tbl_product SET ten_sanpham='$tensanpham',ma_sanpham='$masp',gia_sanpham='$giasp',
+                $sql_them = "UPDATE tbl_product SET ten_sanpham='$tensanpham',ma_sanpham='$masp',gia_sanpham='$giasp',giamgia_sanpham='$giamgiasp',
                 soluong='$soluong',hinhanh='$hinhanh',tomtat='$tomtat',noidung='$noidung',tinhtrang='$tinhtrang',category_id='$danhmuc'
                 WHERE id_sanpham='$_GET[idsanpham]'";
                   
@@ -35,7 +36,7 @@
                           unlink("uploads/".$row['hinhanh']);
                         }
               }else{
-                $sql_them = "UPDATE tbl_product SET ten_sanpham='$tensanpham',ma_sanpham='$masp',gia_sanpham='$giasp',
+                $sql_them = "UPDATE tbl_product SET ten_sanpham='$tensanpham',ma_sanpham='$masp',gia_sanpham='$giasp',giamgia_sanpham='$giamgiasp',
               soluong='$soluong',tomtat='$tomtat',noidung='$noidung',tinhtrang='$tinhtrang',category_id='$danhmuc'
               WHERE id_sanpham='$_GET[idsanpham]'";
               } 

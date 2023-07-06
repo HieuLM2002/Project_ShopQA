@@ -12,6 +12,9 @@
          if($tam=='tintuc'){
           include('./sidebar/sidebar.php');
          }
+         if($tam=="danhmucsanpham"){
+          include('./sidebar/sidebar.php');
+         }
          if($tam==""){
           include('./sidebar/sidebar.php');
          }
@@ -28,6 +31,11 @@
            if($temp == 'gioithieu'){
             include("./main/gioithieu.php");
            }elseif($temp=='sanpham'){
+            // tất cả  sản phẩm
+            include('./main/sanphamAll.php');
+           }elseif($temp=="chitietsanpham"){
+            include('./main/chitietsp.php');
+           }elseif($temp == "danhmucsanpham"){
             include('./main/sanpham.php');
            }elseif($temp=='tintuc'){
             include('./main/tintuc.php');

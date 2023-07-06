@@ -1,6 +1,6 @@
 
 <div class="back-mainpage">
-  <a href="index.php" class="homePage">Trang chủ</a><span> > Giới thiệu</span>
+  <a href="index.php" class="homePage">Trang chủ</a><span style="color:#66a182"> > Giới thiệu</span>
 </div>
 <div class="introduce">
     <p class="introduce-title">Giới thiệu</p></br></br>

@@ -1,5 +1,7 @@
 .back-mainpage{
   border-bottom: #66a182;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 .homePage{
     text-decoration: none;
@@ -15,3 +17,4 @@
 .introduce .introduce-title{
   font-size: 25px;
 }
+/*  css phần file sanpham */
