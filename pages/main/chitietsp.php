@@ -8,6 +8,27 @@
     height:580px;
     border-radius: 5px;
  }   
+ .detail-product{
+    margin-top:25px;
+ }
+ .detail-product span{
+    font-size: 22px;
+    margin-right: 15px;
+    font-weight: bold;
+    color: #66a182;
+}
+.detail-product del{
+    font-weight: bold;
+}
+.detail-product input{
+    width: 100%;
+    padding: 12px;
+    background: #66a182;
+    color: #fffdfd;
+    cursor: pointer;
+    border: none;
+    border-radius:5px
+}
 </style>
 <div class="back-mainpage">
   <a href="index.php" class="homePage">Trang chủ</a><span style="color:#66a182"> > Chi tiết sản phẩm </span>
@@ -30,15 +51,15 @@ while($row_detail = mysqli_fetch_array($query_detail)){
             </div>
         </div>
         <!-- nội dung chi tiết -->
-    <form method="POST" action="#">
+    <form method="POST" action="../pages/main/themgiohang.php?idsanpham=<?php echo $row_detail['id_sanpham'] ?>">
         <div class="detail-product">
            <h4><?php echo $row_detail['ten_sanpham'] ?></h4><br>
+           <span><?php echo number_format($row_detail['gia_sanpham'],0,',','.').'đ'?></span>
+           <del><?php echo number_format($row_detail['giamgia_sanpham'],0,',','.').'đ' ?></del><br><br>
            <p>Mã sản phẩm: <?php echo $row_detail['ma_sanpham'] ?></p><br>
-           <p>Giá sản phẩm:<?php echo number_format($row_detail['gia_sanpham'],0,',','.').'đ'?></p><br>
-           <p>Giảm giá sản phẩm:<del><?php echo number_format($row_detail['giamgia_sanpham'],0,',','.').'đ' ?></del></p><br>
            <p>Số lượng sản phẩm: <?php echo $row_detail['soluong'] ?></p><br>
            <p>Danh mục sản phẩm: <?php echo $row_detail['category_name'] ?></p><br>
-           <p><input type="submit" value="Thêm vào giỏ hàng"></p>
+           <p><input type="submit" name="themgiohang" value="Thêm vào giỏ hàng"></p>
         </div>
     </form>
 </div>

@@ -1,7 +1,9 @@
 .back-mainpage{
-  border-bottom: #66a182;
+  border-bottom:1px solid #66a182;
   text-transform: uppercase;
   font-weight: bold;
+  width: 133%;
+  padding-bottom: 12px;
 }
 .homePage{
     text-decoration: none;

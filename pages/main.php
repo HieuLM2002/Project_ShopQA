@@ -35,7 +35,10 @@
             include('./main/sanphamAll.php');
            }elseif($temp=="chitietsanpham"){
             include('./main/chitietsp.php');
-           }elseif($temp == "danhmucsanpham"){
+           }elseif($temp == "giohang"){
+            include('./main/giohang.php');
+           }
+           elseif($temp == "danhmucsanpham"){
             include('./main/sanpham.php');
            }elseif($temp=='tintuc'){
             include('./main/tintuc.php');

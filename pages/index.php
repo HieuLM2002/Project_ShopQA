@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="stylesheet" href="../style/backHomePage.css"/>
     <link rel="stylesheet" href="../style/lienhe.css"/>
+    <link rel="stylesheet" href="../style/giohang.css"/>
     <script
       src="https://kit.fontawesome.com/d2a190de21.js"
       crossorigin="anonymous"

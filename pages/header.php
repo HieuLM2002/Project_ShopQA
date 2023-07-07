@@ -38,13 +38,13 @@
                 ></span
               >
             </div>
-            <a href="#">
+            <a href="index.php?quanly=giohang">
               <div class="circle-icon bgr">
                 <i class="fa-solid fa-bag-shopping"></i>
               </div>
             </a>
             <div class="content-text--header">
-              <a href="#" class="text-service">Giỏ hàng</a>
+              <a href="index.php?quanly=giohang" class="text-service">Giỏ hàng</a>
               <span><span class="quantity">(0)</span>Sản phẩm</span>
             </div>
           </div>

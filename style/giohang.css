@@ -1,0 +1,74 @@
+.customers {
+    border-collapse: collapse;
+    width          : 133%;
+    margin-top     : 2%;
+    text-align: center;
+}
+
+.customers td,
+.customers th {
+    border          : 1px solid #ddd;
+    padding         : 8px;
+    background-color: #319e3f;
+    color: white;
+    text-align:center;
+}
+.customers td img{
+    width: 90px;
+    height: 100px;
+}
+.customers th {
+    padding-top     : 8px;
+    padding-bottom  : 8px;
+    background-color: #319e3f;
+    color           : white;
+}
+.customers td a{
+    font-weight: bold;
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0 10px;  
+}
+.customers .text-sum{
+    color: #1d2fb7;
+}
+.customers .sum-all--product{
+    font-weight: bold;
+    color: #000;
+    font-size: 20px;
+    padding: 8px;
+    margin-left: 60px;
+}
+.customers .delete-all{
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+}
+.cart-empty{
+    height: 400px;
+    width: 133%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.cart-empty i{
+    font-size: 150px;
+    color: #319e3f;
+}
+.cart-empty span{
+    font-size: 18px;
+}
+.calculation-product{
+    font-size: 20px;
+    color: #000000 !important;
+    border: 1px solid black;
+    margin-left: 6px;
+    border-radius: 5px;
+    background: white;
+}
+.calculation-product:hover{
+    background: #000;
+    color: white !important;
+}
