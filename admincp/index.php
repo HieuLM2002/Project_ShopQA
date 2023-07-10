@@ -1,3 +1,10 @@
+<?php
+session_start();
+// nếu ko tồn tại session đăng nhập thì cho quay lại login
+if(!isset($_SESSION['dangnhap'])){
+    header('location:login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

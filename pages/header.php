@@ -1,12 +1,30 @@
+<?php
+//  session_start();
+if(isset($_GET['dangxuat']) && $_GET['dangxuat'] == 1 ){
+    unset($_SESSION['dangky']);
+    header('location:index.php');
+}
+$count = 0;
+if(isset($_SESSION['cart'])){
+    $count = count($_SESSION['cart']);
+}
+?>
 <div class="header">
         <div class="header-top">
           <div class="header-top--content">
-            <a href="#">Đăng ký</a>
-            <a href="">Đăng nhập</a>
+           <?php if(isset($_SESSION['dangky'])){          
+               echo '<a href="index.php?quanly=taikhoan">Tài khoản: '.$_SESSION['dangky'].' </a> <a href="index.php?dangxuat=1">Đăng xuất tài khoản</a>';
+              ?>
+              <?php 
+            }else{ ?>
+            <a href="header/dangky.php">Đăng ký</a>
+            <a href="header/dangnhap.php">Đăng nhập</a>
+              <?php
+              }?>
           </div>
           <div class="header-top--content">
             <a href="">Hướng dẫn</a>
-            <a href="">Đơn hàng</a>
+            <a href="index.php?quanly=giohang">Đơn hàng</a>
           </div>
         </div>
         <div class="header-content">
@@ -45,7 +63,7 @@
             </a>
             <div class="content-text--header">
               <a href="index.php?quanly=giohang" class="text-service">Giỏ hàng</a>
-              <span><span class="quantity">(0)</span>Sản phẩm</span>
+              <span><span class="quantity">(<?php  echo $count; ?>)</span>Sản phẩm</span>
             </div>
           </div>
         </div>

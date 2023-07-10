@@ -1,22 +1,30 @@
 <?php
-session_start();
-if(isset($_SESSION['cart'])){
-   
-}
+//  session_start();
 ?>
+<style>
+  #main{
+    width: 100%;
+    margin:0;
+  }
+  .footer{
+    width: 100%;
+  }
+  .main-content{
+    margin-top:15px;
+  }
+  .back-mainpage{
+    width: 121%;
+    margin-left:6.5%;
+  }
+  </style>
+<br><br>  
 <div class="back-mainpage">
   <a href="index.php" class="homePage">Trang chủ</a><span style="color:#66a182"> > Giỏ hàng</span>
-</div><br>
+</div><br><br>
+<table class="customers">
 <?php
 if(isset($_SESSION['cart'])){
-    $i = 0;
-     $tongtien = 0;
-    foreach($_SESSION['cart'] as $cart_item){
-        $thanhtien = $cart_item['soluong']*$cart_item['giasp'];
-        $tongtien += $thanhtien;
-        $i++;
 ?>
-<table class="customers">
   <tr>
     <th>ID</th>
     <th>Mã sản phẩm</th>
@@ -27,6 +35,14 @@ if(isset($_SESSION['cart'])){
     <th>Thành tiền</th>
     <th>Quản lý</th>
   </tr>
+  <?php
+   $i = 0;
+   $tongtien = 0;
+  foreach($_SESSION['cart'] as $cart_item){
+      $thanhtien = $cart_item['soluong']*$cart_item['giasp'];
+      $tongtien += $thanhtien;
+      $i++;
+  ?>
   <tr>
     <td><?php echo $i ?></td>
     <td><?php echo $cart_item['masp'] ?></td>
@@ -52,9 +68,9 @@ if(isset($_SESSION['cart'])){
         </td>
        
   </tr>
-</table>
-<?php 
-    }else{
+  <?php 
+    }
+    if(!isset($_SESSION['cart'])){
 ?>
 <div class="cart-empty">
   <p><i class="fa-solid fa-bag-shopping"></i> <br><br><br>
@@ -64,3 +80,23 @@ if(isset($_SESSION['cart'])){
 <?php
     }
 ?>
+</table>
+<?php
+      if(isset($_SESSION['dangky']) && isset($_SESSION['cart'])){
+        ?>        
+<div class="pay">
+        <a href="../pages/main/thanhtoan.php">Đặt hàng</a>
+  </div>       
+      <?php       
+      }else{
+        if(isset($_SESSION['cart'])){
+    ?>
+    <div class="pay">
+    <a href="../pages/header/dangky.php">Đăng ký đặt hàng</a>
+    </div>  
+    <?php
+      }
+    }
+    ?>   
+</div>
+

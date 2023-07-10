@@ -5,7 +5,6 @@
 }
 
 .wrapper {
-    border: 1px solid #000;
     height: auto;
     width : 100%;
     margin: 0 auto;
@@ -179,7 +178,7 @@
     border-radius: 5px;
     padding-left : 10px;
     position     : absolute;
-    margin-right : 13%;
+    margin-right : 14%;
     outline      : none;
 }
 

@@ -1,15 +1,12 @@
 <style>
-.back-mainpage{
-  width: 100%;
-}  
 .product-set--product{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  width: 133%;
 }
 .product-item{
   margin-bottom  : 6%;
-  width:29%;
 }
 .price-product a{
 font-size:13px;
@@ -18,60 +15,36 @@ margin-top:20px ;
 .product-item span{
   margin-right:10px;
 }
-.wrapper-list{
-  display: flex;
-    width: 100%;
-    background: #252525;
-    justify-content: center;
-    color: white;
-    height: 3%;
-    align-items: center;
+.product-title{
+    width: 133%;
 }
-.list-page{
-  display: flex;
-  margin-left:4%
-}
-.list-page li{
-  list-style-type: none;
-}
-.list-page li:hover {
-    background: #66a182;
-}
-.list-page a{
-  text-decoration: none;
-  color: white;
-  padding: 4px 15px;
-  border: 1px solid white;
-  line-height: 25px;
-}
-
   </style>
 <?php
-
-if(isset($_SESSION['idpage'])){
-     $page = $_SESSION['idpage'];
-}else{
-  $page = 1;
-}
-
-if($page == '' || $page==1){
-  $begin = 0;
-}else{
-  $begin = ($page*6)-6;
-}
-$sql_product = "SELECT * FROM tbl_product,tbl_category WHERE tbl_product.category_id = tbl_category.category_id  ORDER BY 
-tbl_product.category_id DESC LIMIT $begin,6";
+if(isset($_POST['timkiem'])){
+    $tukhoa = $_POST['tukhoa'];
+  }
+$sql_product = "SELECT * FROM tbl_product,tbl_category WHERE tbl_product.category_id = tbl_category.category_id  AND tbl_product.ten_sanpham 
+LIKE  '%".$tukhoa."%'";
 $query_product = mysqli_query($connect,$sql_product);
+$num_rows = mysqli_num_rows($query_product);
 ?>
 <div class="back-mainpage">
-  <a href="index.php" class="homePage">Trang chủ</a><span style="color:#66a182"> > Tất cả sản phẩm </span>
+  <a href="index.php" class="homePage">Trang chủ</a><span style="color:#66a182"> > Tìm kiếm </span>
 </div>
 <div class="product-content">
             <div class="product-display--content">
-              <div class="product-title">
-                <h4>Tất cả sản phẩm</h4>
-              </div>
-            
+            <?php if($num_rows>0){ ?>
+                <div class="product-title">
+                    <h4>Tất cả sản phẩm : <?php echo $_POST['tukhoa']; ?></h4>
+                </div>
+            <?php
+            }else{
+            ?>      
+                    <br><br><br>
+                    <h4 style="font-size:24px; color:#d80f0f;">Không tìm thấy bất kỳ kết quả nào với từ khóa trên!</h4>
+            <?php
+            }
+            ?>
                 <div class="product-set--product">
                     <?php
                     while($row = mysqli_fetch_array($query_product)){
@@ -104,22 +77,4 @@ $query_product = mysqli_query($connect,$sql_product);
                     ?>
                 </div>
             </div>    
-</div>
-<div class="wrapper-list">
-  <?php
-    $sql = "SELECT * FROM tbl_product";
-     $sql_page = mysqli_query($connect,$sql);
-     $row_count = mysqli_num_rows($sql_page);
-     $pages = ceil($row_count/6); //số sp trong db / số sp trên 1 trang (ở đây 6 sp trên 1 trang)
-  ?>
-    <p>Trang hiện tại: <?php echo $page ?>/<?php echo $pages ?></p>
-    <ul class="list-page">
-      <?php
-      for($i=1;$i<=$pages;$i++){
-      ?>
-      <li <?php if($i==$page){echo 'style="background: #66a182;"';}else{ echo '';} ?>><a href="./index.php?quanly=trang&idpage=<?php echo $i ?>"><?php echo $i ?></a></li>
-      <?php
-      }
-      ?>
-    </ul>
-</div>                      
+</div>                    

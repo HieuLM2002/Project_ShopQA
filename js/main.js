@@ -36,7 +36,6 @@ seeMore.addEventListener('click',handleSeeMore);
 
 
 
-
 // chuyển động slide->mục main content
 let imgList = ["imgSale1.jpg", "imgSale2.jpg", "imgSale3.jpg"];
 let index = 0;

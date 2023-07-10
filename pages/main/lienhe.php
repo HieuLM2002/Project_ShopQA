@@ -33,7 +33,7 @@
                   <img src="../imgs/logo.png" alt="logo" />
                 </a>
               </div>
-               <pre> <p>Website được thành lập với niềm đam mê và khát vọng thành công trong lĩnh vực </br></br>Thương mại điện tử. Chúng tôi đã và đang khẳng định được vị trí hàng đầu bằng những </br></br>sản phẩm chất lượng. </p></pre>
+               <pre> <p>Website được thành lập với niềm đam mê và khát vọng thành công trong lĩnh vực </br></br>Thương mại điện tử. Chúng tôi đã và đang khẳng định được vị trí hàng đầu bằng </br></br>những sản phẩm chất lượng. </p></pre>
               <div class="footer-contact">
                 <i class="fa-solid fa-location-dot"></i>
                 <span class="span-footer"

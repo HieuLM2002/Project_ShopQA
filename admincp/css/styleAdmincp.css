@@ -17,7 +17,26 @@
     width : 90%;
     margin: 5% auto auto auto;
 }
-
+.logout{
+    display: flex;
+}
+.logout p{
+    padding: 10px;
+    border: 1px solid white;
+    background: forestgreen;
+    color: white;
+}
+.logout a{
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 10px;
+    border: 1px solid white;
+    background: forestgreen;
+    color: white;
+}
+.logout a:hover{
+    background: rgb(173, 22, 22);
+}
 .admincp_list {
     list-style-type: none;
     text-decoration: none;

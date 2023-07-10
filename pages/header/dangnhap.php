@@ -1,21 +1,23 @@
 <?php
 session_start();
-include('config/connect.php');
+include("../../admincp/config/connect.php");
 if(isset($_POST['dangnhap'])){
-    $taikhoan = $_POST['username'];
+    $email = $_POST['email'];
     $matkhau = sha1($_POST['password']);
     // chọn tất cả từ tbl admin đk username phải băng username và pw = mk;
-    $sql = "SELECT * FROM tbl_admin WHERE username = '$taikhoan'  AND password = '$matkhau'   LIMIT 1";
+    $sql = "SELECT * FROM tbl_register WHERE email = '$email'  AND matkhau = '$matkhau'   LIMIT 1";
     $row = mysqli_query($connect,$sql);
     //đếm số dòng của row
     $count = mysqli_num_rows($row);
     // nếu mà row = 1(user đúng)
     if($count>0){
-        $_SESSION['dangnhap'] = $taikhoan;
-        header('location:index.php');
+        $row_data = mysqli_fetch_array($row);
+        $_SESSION['dangky'] = $row_data['ten_khachhang'];
+        $_SESSION['id_khachhang'] = $row_data['id_dangky'];
+        header('location:../../pages/index.php');
     }else{
-     echo "<script type='text/javascript'>alert('Tài khoản hoặc mật khẩu không chính xác,vui lòng nhập lại!');</script>";
-        header('location:login.php');
+     echo  $thatbai = "Tài khoản hoặc mật khẩu không chính xác!";
+       
     }
 }
 ?>
@@ -24,17 +26,17 @@ if(isset($_POST['dangnhap'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/authen.css" />
-    <title>Đăng nhập Admincp</title>
+    <link rel="stylesheet" href="../../admincp/css/authen.css" />
+    <title>Đăng nhập khách hàng</title>
 </head>
 <body>
 <div class="wrapper-authen">
         <div class = "form-authen ">
         <form action="" method="POST" >
-            <h3>Đăng nhập Admin</h3><br>
+            <h3>Đăng nhập</h3><br>
             <div>
             <label for="username">Tên tài khoản</label><br>
-            <input type="text" id="username" name="username" placeholder="Nhập tên tài khoản.."><br><br>
+            <input type="text" id="username" name="email" placeholder="Nhập tên tài khoản.."><br><br>
             </div>
             <br>
             <div>

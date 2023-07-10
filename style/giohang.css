@@ -1,21 +1,22 @@
 .customers {
     border-collapse: collapse;
-    width          : 133%;
-    margin-top     : 2%;
+    width          : 121%;
     text-align: center;
+    margin-left: 6.5%;
 }
 
 .customers td,
 .customers th {
     border          : 1px solid #ddd;
     padding         : 8px;
-    background-color: #319e3f;
+    background-color: #66a182;
     color: white;
     text-align:center;
 }
 .customers td img{
-    width: 90px;
-    height: 100px;
+    width: 100px;
+    height: 110px;
+    border-radius: 4px;
 }
 .customers th {
     padding-top     : 8px;
@@ -71,4 +72,18 @@
 .calculation-product:hover{
     background: #000;
     color: white !important;
+}
+.pay{
+    width: 133%;
+    display: flex;
+    justify-content: flex-end;
+}
+.pay a{
+    text-decoration: none;
+    padding: 10px 70px;
+    border: 1px solid black;
+    background: #66a182;
+    color: white;
+    border-radius: 5px;
+    margin-right: 4.2%;
 }

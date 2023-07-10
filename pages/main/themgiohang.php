@@ -1,5 +1,5 @@
 <?php
-session_start();
+  session_start();
 include("../../admincp/config/connect.php");
 //thêm số lượng
 if(isset($_GET['cong'])){
@@ -8,6 +8,7 @@ if(isset($_GET['cong'])){
         if($cart_item['id'] != $id){
             $product[] = array('tensanpham'=>$cart_item['tensanpham'],'id'=>$cart_item['id'],
             'soluong'=>$cart_item['soluong'],'giasp'=>$cart_item['giasp'],'hinhanh'=>$cart_item['hinhanh'],'masp'=>$cart_item['masp']);
+            $_SESSION['cart'] = $product;
         }else {
             $tangsoluong = $cart_item['soluong']+1;
             if($cart_item['soluong']<=9){
@@ -29,8 +30,9 @@ foreach($_SESSION['cart'] as $cart_item){
     if($cart_item['id'] != $id){
         $product[] = array('tensanpham'=>$cart_item['tensanpham'],'id'=>$cart_item['id'],
         'soluong'=>$cart_item['soluong'],'giasp'=>$cart_item['giasp'],'hinhanh'=>$cart_item['hinhanh'],'masp'=>$cart_item['masp']);
+        $_SESSION['cart'] = $product;
     }else {
-        $giamsoluong = $cart_item['soluong']-1;
+        $giamsoluong = $cart_item['soluong'] - 1;
         if($cart_item['soluong']>1){
             $product[] = array('tensanpham'=>$cart_item['tensanpham'],'id'=>$cart_item['id'],
            'soluong'=>$giamsoluong,'giasp'=>$cart_item['giasp'],'hinhanh'=>$cart_item['hinhanh'],'masp'=>$cart_item['masp']);
@@ -88,7 +90,7 @@ if(isset($_POST['themgiohang'])){
                 // nếu dữ liệu trùng
                if($cart_item['id']==$id){
                 $product[] = array('tensanpham'=>$cart_item['tensanpham'],'id'=>$cart_item['id'],
-            'soluong'=>$soluong+1,'giasp'=>$cart_item['giasp'],'hinhanh'=>$cart_item['hinhanh'],'masp'=>$cart_item['masp']);
+            'soluong'=>$cart_item['soluong']+1,'giasp'=>$cart_item['giasp'],'hinhanh'=>$cart_item['hinhanh'],'masp'=>$cart_item['masp']);
                 $found=true;
                }else{
                 // nếu dữ liệu k trùng

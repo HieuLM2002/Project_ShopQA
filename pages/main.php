@@ -15,6 +15,9 @@
          if($tam=="danhmucsanpham"){
           include('./sidebar/sidebar.php');
          }
+         if($tam=='trang'){
+          include('./sidebar/sidebar.php');
+         }
          if($tam==""){
           include('./sidebar/sidebar.php');
          }
@@ -26,25 +29,60 @@
            if(isset($_GET['quanly'])){
             $temp = $_GET['quanly'];
            }else{
-            $temp= '';
+            $temp = '';
            }
            if($temp == 'gioithieu'){
             include("./main/gioithieu.php");
-           }elseif($temp=='sanpham'){
+           }
+           
+           elseif($temp=='sanpham'){
             // tất cả  sản phẩm
             include('./main/sanphamAll.php');
-           }elseif($temp=="chitietsanpham"){
+           }
+           
+           elseif($temp=="chitietsanpham"){
             include('./main/chitietsp.php');
-           }elseif($temp == "giohang"){
+           }
+           
+           elseif($temp == "giohang"){
             include('./main/giohang.php');
            }
+           
+           elseif($temp == "thanhtoan"){
+            include('./main/thanhtoan.php');
+           }
+           
            elseif($temp == "danhmucsanpham"){
             include('./main/sanpham.php');
-           }elseif($temp=='tintuc'){
+           }
+           
+           elseif($temp=='tintuc'){
             include('./main/tintuc.php');
-           }elseif($temp=='lienhe'){
+           }
+           
+           elseif($temp=='lienhe'){
             include('./main/lienhe.php');
-           }else{
+           }
+           
+           elseif($temp=='timkiem'){
+            include('./main/timkiem.php');
+           }
+           
+           elseif($temp =='thanks'){
+            include('./main/thanks.php');
+           }
+           elseif($temp =='trang'){   
+            $trang = $_GET['idpage'];
+            $_SESSION['idpage'] = $trang;
+            include("./main/sanphamAll.php");
+           }
+           
+           elseif($temp =='taikhoan'){
+            include('./main/thongtintaikhoan.php');
+           }
+
+
+           else{
             include("./main/index.php");
            }
          ?>

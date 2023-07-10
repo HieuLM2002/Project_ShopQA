@@ -1,4 +1,7 @@
 <style>
+ .back-mainpage{
+  width: 100%;
+}  
 .product-set--product{
   display: flex;
   flex-wrap: wrap;
