@@ -3,14 +3,14 @@
         <div class="menu-content">
             <div class="nav">
               <ul class="nav-list">
-                <li><a class="home-page active" href="index.php">Trang chủ</a></li>
-                <li><a class="nav-introduce"  href="index.php?quanly=gioithieu">giới thiệu</a></li>
-                <li><a class="nav-product" href="index.php?quanly=sanpham">sản phẩm</a></li>
-                <li><a class="nav-news" href="index.php?quanly=tintuc">tin tức</a></li>
-                <li><a class="nav-contact" href="index.php?quanly=lienhe">liên hệ</a></li>
+                <li><a class="home-page active" href="index.html">Trang chủ</a></li>
+                <li><a class="nav-introduce"  href="gioithieu.html">giới thiệu</a></li>
+                <li><a class="nav-product" href="sanpham.html">sản phẩm</a></li>
+                <li><a class="nav-news" href="tintuc.html">tin tức</a></li>
+                <li><a class="nav-contact" href="lienhe.html">liên hệ</a></li>
               </ul>
             </div>
-            <form action="index.php?quanly=timkiem" method="POST">
+            <form action="timkiem.html" method="POST">
 
               <div class="input-search">
                
@@ -54,7 +54,7 @@ if(isset($_GET['quanly'])){
 <script>
   let nameTemp = "<?php echo $navTemp; ?>";
   let navAfter = '.<?php echo $activeAfter ?>';
-  if(nameTemp ){
+  if(nameTemp && navAfter !== "."){
   let activeBefore = document.querySelector('.home-page');
   activeBefore.classList.remove('active');
   let activeAfter = document.querySelector(navAfter);

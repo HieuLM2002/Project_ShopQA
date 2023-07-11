@@ -2,26 +2,62 @@
 //  session_start();
 ?>
 <style>
-  #main{
-    width: 100%;
-    margin:0;
-  }
-  .footer{
-    width: 100%;
-  }
-  .main-content{
-    margin-top:15px;
-  }
-  .back-mainpage{
-    width: 121%;
-    margin-left:6.5%;
-  }
+.cart-title{
+    font-weight: bold;
+}
+.empty-cart{
+  width: 302%;
+    text-align: center;
+}
+.empty-cart p i{
+    font-size: 60px;
+    color: #319e3f;
+}
+.tbl-cart{
+    width: 308%;
+    border-collapse: collapse;
+}
+.tbl-cart td,th{
+    border          : 1px solid #ddd;
+    padding         : 8px;
+    background-color: #66a182;
+    color: white;
+    text-align:center;
+}
+.tbl-cart a{
+    font-weight: bold;
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0 10px; 
+}
+.tbl-cart tr td img{
+  width: 100px;
+}
+.wrapper-cart{
+    width: 50%;
+}
+.order{
+  width: 282%;
+  text-align:center;
+  padding: 15px;
+  
+}
+.order a{
+  text-decoration: none;
+    border: 1px solid black;
+    background: #79b3ff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color:black;
+}
   </style>
-<br><br>  
-<div class="back-mainpage">
-  <a href="index.html" class="homePage">Trang chủ</a><span style="color:#66a182"> > Giỏ hàng</span>
+<br><br> 
+<div class="wrapper-cart">
+<div class="cart-title">
+  <p>ĐƠN HÀNG CỦA BẠN</p>
 </div><br><br>
-<table class="customers">
+<table class='tbl-cart'>
 <?php
 if(isset($_SESSION['cart'])){
 ?>
@@ -49,9 +85,9 @@ if(isset($_SESSION['cart'])){
     <td><?php echo $cart_item['tensanpham'] ?></td>
     <td><a href="san-pham/<?php echo $cart_item['id'] ?>.html"><img src="../admincp/modules/quanlisp/uploads/<?php echo $cart_item['hinhanh'] ?>"></a></td>
     <td>
-        <a href="../pages/main/themgiohang.php?tru=<?php echo $cart_item['id'] ?>" class="calculation-product"><span>-<span></a>
+        <a href="./main/themgiohang.php?tru=<?php echo $cart_item['id'] ?>" class="calculation-product"><span>-<span></a>
         <?php echo $cart_item['soluong'] ?>
-        <a href="../pages/main/themgiohang.php?cong=<?php echo $cart_item['id'] ?>" class="calculation-product"><span>+</span></a>
+        <a href="./main/themgiohang.php?cong=<?php echo $cart_item['id'] ?>" class="calculation-product"><span>+</span></a>
     </td>
     <td><?php echo number_format($cart_item['giasp'],0,',','.').'đ' ?></td>
     <td><?php echo number_format($thanhtien,0,',','.').'đ' ?></td>
@@ -72,7 +108,7 @@ if(isset($_SESSION['cart'])){
     }
     if(!isset($_SESSION['cart'])){
 ?>
-<div class="cart-empty">
+<div class="empty-cart">
   <p><i class="fa-solid fa-bag-shopping"></i> <br><br><br>
   <span>Không có sản phẩm nào trong giỏ hàng của bạn</span>
 </p>
@@ -84,19 +120,20 @@ if(isset($_SESSION['cart'])){
 <?php
       if(isset($_SESSION['dangky']) && isset($_SESSION['cart'])){
         ?>        
-<div class="pay">
+<div class="order">
         <a href="../pages/main/thanhtoan.php">Đặt hàng</a>
   </div>       
       <?php       
       }else{
         if(isset($_SESSION['cart'])){
     ?>
-    <div class="pay">
+    <div class="">
     <a href="../pages/header/dangky.php">Đăng ký đặt hàng</a>
     </div>  
     <?php
       }
     }
     ?>   
+ </div>
 </div>
-
+<br><br><br><br>

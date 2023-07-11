@@ -14,7 +14,7 @@ if(isset($_POST['dangnhap'])){
         $row_data = mysqli_fetch_array($row);
         $_SESSION['dangky'] = $row_data['ten_khachhang'];
         $_SESSION['id_khachhang'] = $row_data['id_dangky'];
-        header('location:../../pages/index.php');
+        header('location:../../pages/index.html');
     }else{
      echo  $thatbai = "Tài khoản hoặc mật khẩu không chính xác!";
        

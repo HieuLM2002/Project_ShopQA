@@ -12,7 +12,7 @@
   width: 29%;
 }
 .price-product a{
-font-size:13px;
+font-size:16px;
 }
 
 </style>
@@ -27,7 +27,7 @@ $query_category = mysqli_query($connect,$sql_category);
 $row_title = mysqli_fetch_array($query_category);
 ?>
 <div class="back-mainpage">
-  <a href="index.php" class="homePage">Trang chủ</a><span> > Danh mục sản phẩm : <?php echo $row_title['category_name'] ?></span>
+  <a href="index.html" class="homePage">Trang chủ</a><span> > Danh mục sản phẩm : <?php echo $row_title['category_name'] ?></span>
 </div>
 <div class="product-content">
             <div class="product-display--content">
@@ -40,7 +40,7 @@ $row_title = mysqli_fetch_array($query_category);
                     while($row_product = mysqli_fetch_array($query_product)){
                     ?>
                     <div class="product-item">
-                            <a href="index.php?quanly=chitietsanpham&id=<?php echo $row_product['id_sanpham'] ?>">
+                            <a href="san-pham/<?php echo $row_product['id_sanpham'] ?>.html">
                                 <img
                                 src="../admincp/modules/quanlisp/uploads/<?php echo $row_product['hinhanh'] ?>"
                                 

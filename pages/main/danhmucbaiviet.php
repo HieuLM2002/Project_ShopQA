@@ -1,4 +1,3 @@
-
 <style>
  .back-mainpage{
   width: 100%;
@@ -7,11 +6,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 100%;
+  width: 133%;
 }
 .product-item{
     margin-bottom: 6%;
-    width: 30%;
+    width: 25%;
     border: 1px solid black;
     height: auto;
     padding: 18px;
@@ -26,24 +25,29 @@ text-decoration: none;
 
 }
 .product-item img{
-  width: 234px;
-  height: 220px;
+  width: 266px;
+  height: 266px;
   margin-bottom:10px;
 }
 
 </style>
 <?php
-
-$sql_bv = "SELECT * FROM tbl_baiviet WHERE tinhtrang=1  ORDER BY id DESC";
+// đem category_id của product( sản phẩm) so sánh với category_id của tbl category(bảng danh mục) và tiếp tục lấy ra category_id (có id sp = id ng dùng nhập)
+$sql_bv = "SELECT * FROM tbl_baiviet WHERE tbl_baiviet.id_danhmuc = '$_GET[id]' ORDER BY id DESC";
 $query_bv = mysqli_query($connect,$sql_bv);
+
+// lấy ra tên danh mục;
+$sql_category = "SELECT * FROM tbl_danhmucbaiviet WHERE tbl_danhmucbaiviet.id_baiviet = '$_GET[id]' LIMIT 1";
+$query_category = mysqli_query($connect,$sql_category);
+$row_title = mysqli_fetch_array($query_category);
 ?>
 <div class="back-mainpage">
-  <a href="index.html" class="homePage">Trang chủ</a><span> > Tin tức mới nhất</span>
+  <a href="index.html" class="homePage">Trang chủ</a><span> > Danh mục bài viết : <?php echo $row_title['tendanhmuc_baiviet'] ?></span>
 </div>
 <div class="product-content">
             <div class="product-display--content">
               <div class="product-title">
-                <h4>Tin tức</h4>
+                <h4> <?php echo $row_title['tendanhmuc_baiviet'] ?></h4>
               </div>
             
                 <div class="product-set--product">

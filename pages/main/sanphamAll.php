@@ -64,7 +64,7 @@ tbl_product.category_id DESC LIMIT $begin,6";
 $query_product = mysqli_query($connect,$sql_product);
 ?>
 <div class="back-mainpage">
-  <a href="index.php" class="homePage">Trang chủ</a><span style="color:#66a182"> > Tất cả sản phẩm </span>
+  <a href="index.html" class="homePage">Trang chủ</a><span style="color:#66a182"> > Tất cả sản phẩm </span>
 </div>
 <div class="product-content">
             <div class="product-display--content">
@@ -77,7 +77,7 @@ $query_product = mysqli_query($connect,$sql_product);
                     while($row = mysqli_fetch_array($query_product)){
                     ?>
                     <div class="product-item">
-                            <a href="index.php?quanly=chitietsanpham&id=<?php echo $row['id_sanpham'] ?>">
+                            <a href="san-pham/<?php echo $row['id_sanpham'] ?>.html">
                                 <img
                                 src="../admincp/modules/quanlisp/uploads/<?php echo $row['hinhanh'] ?>"               
                                 />

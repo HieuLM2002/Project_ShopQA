@@ -1,6 +1,6 @@
 
 <div class="back-mainpage">
-  <a href="index.php" class="homePage">Trang chủ</a><span style="color:#66a182"> > Liên hệ</span>
+  <a href="index.html" class="homePage">Trang chủ</a><span style="color:#66a182"> > Liên hệ</span>
 </div>
 
 <div class="ggmap">

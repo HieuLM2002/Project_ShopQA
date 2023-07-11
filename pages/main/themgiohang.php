@@ -21,7 +21,7 @@ if(isset($_GET['cong'])){
             $_SESSION['cart'] = $product;
         }
     } 
-    header('location:../index.php?quanly=giohang');
+    header('location:../giohang.html');
     }
 //trừ số lượng sp
 if(isset($_GET['tru'])){
@@ -43,7 +43,7 @@ foreach($_SESSION['cart'] as $cart_item){
         $_SESSION['cart'] = $product;
     }
 } 
-header('location:../index.php?quanly=giohang');
+header('location:../giohang.html');
 }
 
 
@@ -60,13 +60,13 @@ if(isset($_SESSION['cart']) && isset($_GET['xoa'])){
     }
 
     $_SESSION['cart'] = $product; // tạo lại session mới từ mảng product mới vừa lọc
-    header('location:../index.php?quanly=giohang');
+    header('location:../giohang.html');
    }
 }
 //xóa tất cả
 if(isset($_GET['xoatatca']) && $_GET['xoatatca']== 1){
     unset($_SESSION['cart']);
-    header('location:../index.php?quanly=giohang');
+    header('location:../giohang.html');
 }
 // thêm sp vào giỏ hàng
 
@@ -109,6 +109,6 @@ if(isset($_POST['themgiohang'])){
         }
      }
     // nếu $_SESSION['cart'] ko tồn tại thì sẽ tạo ra 1 mảng là new_product , nếu trùng tăng lên 1 và tạo ra thêm 1 mảng $product
-     header('location:../index.php?quanly=giohang');
+     header('location:../giohang.html');
 }
 ?>

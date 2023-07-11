@@ -147,3 +147,17 @@
 .update-delete--product{
     width: 15%;
 }
+/* xem đơn hàng */
+.view-order{
+    background: #1a74a8;
+}
+.total-money{
+    text-align: right;
+}
+.total-money p{
+    font-weight: bold;
+}
+.total-money span{
+    color: rgb(255, 255, 255);
+    margin-right: 1%;
+}

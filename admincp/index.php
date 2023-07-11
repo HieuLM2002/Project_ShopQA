@@ -24,5 +24,12 @@ if(!isset($_SESSION['dangnhap'])){
      include("modules/footer.php");
 ?>  
     </div> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="//cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('thongtinlienhe');
+        CKEDITOR.replace('tomtat');
+        CKEDITOR.replace('noidung');
+    </script>
 </body>
 </html>

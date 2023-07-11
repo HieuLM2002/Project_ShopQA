@@ -45,7 +45,7 @@ form .btn-login:hover,.btn-register:hover{
         transform: scale(0.9);
 }
 form .btn-login:active,.btn-register:active{
-    transform: scale(1);
+    transform: scale(1); 
 }
 .register{
     height: 100%;

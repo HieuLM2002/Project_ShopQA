@@ -31,7 +31,7 @@
 }
 </style>
 <div class="back-mainpage">
-  <a href="index.php" class="homePage">Trang chủ</a><span style="color:#66a182"> > Chi tiết sản phẩm </span>
+  <a href="index.html" class="homePage">Trang chủ</a><span style="color:#66a182"> > Chi tiết sản phẩm </span>
 </div>
 <br><br>
 <?php

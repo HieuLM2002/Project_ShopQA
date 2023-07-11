@@ -15,14 +15,14 @@
 }
 .customers td img{
     width: 100px;
-    height: 110px;
+    height: 130px;
     border-radius: 4px;
 }
 .customers th {
     padding-top     : 8px;
     padding-bottom  : 8px;
-    background-color: #319e3f;
     color           : white;
+    
 }
 .customers td a{
     font-weight: bold;

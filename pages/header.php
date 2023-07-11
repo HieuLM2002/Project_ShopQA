@@ -2,7 +2,7 @@
 //  session_start();
 if(isset($_GET['dangxuat']) && $_GET['dangxuat'] == 1 ){
     unset($_SESSION['dangky']);
-    header('location:index.php');
+    header('location:index.html');
 }
 $count = 0;
 if(isset($_SESSION['cart'])){
@@ -13,7 +13,7 @@ if(isset($_SESSION['cart'])){
         <div class="header-top">
           <div class="header-top--content">
            <?php if(isset($_SESSION['dangky'])){          
-               echo '<a href="index.php?quanly=taikhoan">Tài khoản: '.$_SESSION['dangky'].' </a> <a href="index.php?dangxuat=1">Đăng xuất tài khoản</a>';
+               echo '<a href="taikhoan.html">Tài khoản: '.$_SESSION['dangky'].' </a> <a href="index.php?dangxuat=1">Đăng xuất tài khoản</a>';
               ?>
               <?php 
             }else{ ?>
@@ -24,7 +24,7 @@ if(isset($_SESSION['cart'])){
           </div>
           <div class="header-top--content">
             <a href="">Hướng dẫn</a>
-            <a href="index.php?quanly=giohang">Đơn hàng</a>
+            <a href="giohang.html">Đơn hàng</a>
           </div>
         </div>
         <div class="header-content">
@@ -56,13 +56,13 @@ if(isset($_SESSION['cart'])){
                 ></span
               >
             </div>
-            <a href="index.php?quanly=giohang">
+            <a href="giohang.html">
               <div class="circle-icon bgr">
                 <i class="fa-solid fa-bag-shopping"></i>
               </div>
             </a>
             <div class="content-text--header">
-              <a href="index.php?quanly=giohang" class="text-service">Giỏ hàng</a>
+              <a href="giohang.html" class="text-service">Giỏ hàng</a>
               <span><span class="quantity">(<?php  echo $count; ?>)</span>Sản phẩm</span>
             </div>
           </div>

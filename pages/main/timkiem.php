@@ -29,7 +29,7 @@ $query_product = mysqli_query($connect,$sql_product);
 $num_rows = mysqli_num_rows($query_product);
 ?>
 <div class="back-mainpage">
-  <a href="index.php" class="homePage">Trang chủ</a><span style="color:#66a182"> > Tìm kiếm </span>
+  <a href="index.html" class="homePage">Trang chủ</a><span style="color:#66a182"> > Tìm kiếm </span>
 </div>
 <div class="product-content">
             <div class="product-display--content">
@@ -50,7 +50,7 @@ $num_rows = mysqli_num_rows($query_product);
                     while($row = mysqli_fetch_array($query_product)){
                     ?>
                     <div class="product-item">
-                            <a href="index.php?quanly=chitietsanpham&id=<?php echo $row['id_sanpham'] ?>">
+                            <a href="san-pham/<?php echo $row['id_sanpham'] ?>.html">
                                 <img
                                 src="../admincp/modules/quanlisp/uploads/<?php echo $row['hinhanh'] ?>"               
                                 />

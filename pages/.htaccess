@@ -1,0 +1,22 @@
+RewriteEngine On
+
+#file bên trái là file chuyển đổi , bên phải là file cần được chuyển đổi
+RewriteRule "index.html" "index.php" 
+
+
+# $1 đây là 1 biến tùy biến (có thể là comon,lienhe,tintuc,......) còn quanly là ko thay đổi
+# nếu mà trường thay đổi  ^([a-zA-Z0-9])$ nghĩa là sẽ ko thể biến trước được biến tùy biến là chữ hay số hoặc vừa chữ vừa số
+RewriteRule "^([a-zA-Z0-9]+).html$" "?quanly=$1" 
+
+
+RewriteRule "^danh-muc/([0-9]+).html$" "index.php?quanly=danhmucsanpham&id=$1" 
+
+RewriteRule "^danh-muc-bai-biet/([0-9]+).html$" "index.php?quanly=danhmucbaiviet&id=$1" 
+
+RewriteRule "^san-pham/([0-9]+).html$" "index.php?quanly=chitietsanpham&id=$1" 
+
+RewriteRule "^bai-viet/([0-9]+).html$" "index.php?quanly=baiviet&id=$1" 
+
+RewriteRule "^account/display-([a-zA-Z0-9]+).html$" "?quanly=taikhoan&show=$1"
+
+

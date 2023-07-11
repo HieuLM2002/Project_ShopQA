@@ -24,8 +24,9 @@ if(isset($_POST['dangky'])){
          if($query){
             $thanhcong =  'Đăng ký thành công';
             $_SESSION['dangky'] = $tenkhachhang;
+            $_SESSION['email'] = $email;// sử dụng cho phần show tk 
             $_SESSION['id_khachhang'] = mysqli_insert_id($connect);
-            header('location:../index.php');
+            header('location:../index.html');
      } 
     }  
 }
@@ -70,7 +71,7 @@ if(isset($_POST['dangky'])){
             </div>
 
             <div>
-           <p>Bạn đã có tài khoản ? Click</p><a href="dangnhap.php"> vào đây </a>để đăng nhập!
+           <p>Bạn đã có tài khoản ? Click<a href="dangnhap.php"> vào đây </a>để đăng nhập!</p>
             </div>
             <br>
             <button type="submit" name="dangky" class="btn-register">Đăng ký</button>

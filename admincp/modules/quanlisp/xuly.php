@@ -3,7 +3,7 @@
   $tensanpham = $_POST['tensanpham'];
   $masp = $_POST['masanpham'];
   $giasp = $_POST['giasanpham'];
-  $giamgiasp = $_POST['giamgiasanpham'];
+  $giamgiasp = $_POST['giamgia'];
   $soluong = $_POST['soluong'];
   $tomtat = $_POST['tomtat'];
   $noidung = $_POST['noidung'];
@@ -21,7 +21,7 @@
           move_uploaded_file($hinhanh_tmp,'uploads/'.$hinhanh);
           header("location:../../index.php?action=quanlysanpham&query=them");
   }elseif(isset($_POST['suasanpham'])){
-              if($hinhanh !=''){
+              if(!empty($_FILES['hinhanh']['name'])){
                 // sửa
                 move_uploaded_file($hinhanh_tmp,'uploads/'.$hinhanh);
                

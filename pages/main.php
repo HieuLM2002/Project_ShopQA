@@ -56,6 +56,14 @@
             include('./main/sanpham.php');
            }
            
+           elseif($temp == "danhmucbaiviet"){
+            include('./main/danhmucbaiviet.php');
+           }
+           
+           elseif($temp == "baiviet"){
+            include('./main/baiviet.php');
+           }
+
            elseif($temp=='tintuc'){
             include('./main/tintuc.php');
            }
@@ -75,13 +83,10 @@
             $trang = $_GET['idpage'];
             $_SESSION['idpage'] = $trang;
             include("./main/sanphamAll.php");
-           }
-           
+           }      
            elseif($temp =='taikhoan'){
-            include('./main/thongtintaikhoan.php');
+            include('./main/thongtintaikhoan/thongtintaikhoan.php');
            }
-
-
            else{
             include("./main/index.php");
            }
