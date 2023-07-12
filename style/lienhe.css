@@ -67,10 +67,16 @@ textarea {
 .sup-contact p {
     font-size    : 14px;
     margin-bottom: 20px;
-    
+    list-style-type: none;
 }
 
 .footer-contact i {
     background: #66a182;
     color     : white;
+}
+.span-footer{
+    white-space: nowrap;
+}
+.span-footer a{
+    text-decoration: none;
 }

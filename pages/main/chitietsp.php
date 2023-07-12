@@ -66,3 +66,6 @@ while($row_detail = mysqli_fetch_array($query_detail)){
 <?php
 }
 ?>
+<div>
+    <p>Hello</p>
+</div>

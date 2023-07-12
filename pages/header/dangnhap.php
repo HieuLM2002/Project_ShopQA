@@ -13,11 +13,11 @@ if(isset($_POST['dangnhap'])){
     if($count>0){
         $row_data = mysqli_fetch_array($row);
         $_SESSION['dangky'] = $row_data['ten_khachhang'];
+        $_SESSION['email'] = $row_data['email'];
         $_SESSION['id_khachhang'] = $row_data['id_dangky'];
         header('location:../../pages/index.html');
     }else{
-     echo  $thatbai = "Tài khoản hoặc mật khẩu không chính xác!";
-       
+       $thatbai = "Tài khoản hoặc mật khẩu không chính xác!";   
     }
 }
 ?>
@@ -43,6 +43,8 @@ if(isset($_POST['dangnhap'])){
             <label for="password">Mật khẩu</label><br>
             <input type="password" id="password" name="password" placeholder="Nhập mật khẩu.." autocomplete="on"><br><br>
             </div>
+            <p>Bạn chưa có tài khoản ? Click <a href="dangky.php">vào đây</a> để đăng ký tài khoản!</p>
+            <span style="color:red;"><?php if(isset($thatbai)){ echo $thatbai; }?></span><br>
             <br>
             <button type="submit" name="dangnhap" class="btn-login">Đăng nhập</button>
         </form>  

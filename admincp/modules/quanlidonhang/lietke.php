@@ -12,6 +12,7 @@ $query_lietke_donhang= mysqli_query($connect,$sql_lietke_donhang);
     <th>Email</th>
     <th>Số điện thoại</th>
     <th>Tình trạng</th>
+    <th>Ngày đặt</th>
     <th>Quản lý</th>
   </tr>
   <?php
@@ -36,6 +37,7 @@ $query_lietke_donhang= mysqli_query($connect,$sql_lietke_donhang);
       }
       ?>
     </td>
+    <td><?php echo $row['cart_date'] ?></td>
     <td>
         <a href="index.php?action=donhang&query=xemdonhang&code=<?php echo $row['code_cart'] ?>" class="view-order">Xem đơn hàng</a> 
     </td>

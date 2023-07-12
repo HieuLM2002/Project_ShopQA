@@ -1,4 +1,10 @@
 
+<?php
+$sql_lh= "SELECT * FROM tbl_lienhe WHERE id = 1";
+$query_lh= mysqli_query($connect,$sql_lh);
+?>
+
+
 <div class="back-mainpage">
   <a href="index.html" class="homePage">Trang chủ</a><span style="color:#66a182"> > Liên hệ</span>
 </div>
@@ -29,27 +35,33 @@
     <div class="footer-logo">
             <div class="sup-contact">
               <div class="img-logo--footer">
-                <a href="#">
+                <a href="index.html">
                   <img src="../imgs/logo.png" alt="logo" />
                 </a>
               </div>
-               <pre> <p>Website được thành lập với niềm đam mê và khát vọng thành công trong lĩnh vực </br></br>Thương mại điện tử. Chúng tôi đã và đang khẳng định được vị trí hàng đầu bằng </br></br>những sản phẩm chất lượng. </p></pre>
+               <!-- <pre> <p>Website được thành lập với niềm đam mê và khát vọng thành công trong lĩnh vực </br></br>Thương mại điện tử. Chúng tôi đã và đang khẳng định được vị trí hàng đầu bằng </br></br>những sản phẩm chất lượng. </p></pre> -->
               <div class="footer-contact">
-                <i class="fa-solid fa-location-dot"></i>
-                <span class="span-footer"
-                  >Tầng 3 | 19 Lê Thanh Nghị - Hà Nội</span
+                <?php
+                 while($row =  mysqli_fetch_array($query_lh)){
+                 ?>
+                   <span class="span-footer"
+                  ><?php echo $row['thongtinlienhe'] ?></span
                 >
+                    <?php
+                    }
+                  ?>
+               
               </div>
-              <div class="footer-contact">
+              <!-- <div class="footer-contact">
                 <i class="fa-solid fa-phone"></i>
                 <span class="span-footer">0375890916</span>
-              </div>
-              <div class="footer-contact">
+              </div> -->
+              <!-- <div class="footer-contact">
                 <i class="fa-solid fa-envelope"></i>
                 <a href="mailto:hieu.lm.2283@aptechlearning.edu.vn" class="email-footer"
                   >hieu.lm.2283@aptechlearning.edu.vn</a
                 >
-              </div>
+              </div> -->
             </div>
 
             

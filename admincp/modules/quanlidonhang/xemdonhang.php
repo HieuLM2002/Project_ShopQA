@@ -1,6 +1,6 @@
 <?php
 $sql_lietke_donhang = "SELECT * FROM tbl_cart_details,tbl_product WHERE tbl_cart_details.id_sanpham = tbl_product.id_sanpham
-AND tbl_cart_details.code_cart = '$_GET[code]' ORDER BY tbl_cart_details.id_cart_datails DESC";
+AND tbl_cart_details.code_cart = '$_GET[code]' ORDER BY tbl_cart_details.id_cart_details DESC";
 $query_lietke_donhang= mysqli_query($connect,$sql_lietke_donhang);
 ?>
 <h4>Xem đơn hàng</h4>

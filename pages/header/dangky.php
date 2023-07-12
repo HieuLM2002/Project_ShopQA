@@ -22,11 +22,11 @@ if(isset($_POST['dangky'])){
         VALUES('$tenkhachhang','$email','$diachi','$matkhau','$dienthoai')";
          $query = mysqli_query($connect,$sql);
          if($query){
-            $thanhcong =  'Đăng ký thành công';
+            $thanhcong =  'Đăng ký thành công bạn sẽ được chuyển đến trang chủ,vui lòng chờ!';
             $_SESSION['dangky'] = $tenkhachhang;
-            $_SESSION['email'] = $email;// sử dụng cho phần show tk 
+            $_SESSION['email'] = $email;// sử dụng cho phần show tk và gửi mail thanh toán 
             $_SESSION['id_khachhang'] = mysqli_insert_id($connect);
-            header('location:../index.html');
+            // header('location:../index.html');
      } 
     }  
 }
@@ -83,6 +83,9 @@ if(isset($_POST['dangky'])){
     if(messDangKy){
     let thanhcong = document.querySelector('span');
     thanhcong.innerText = messDangKy;
+    setTimeout(()=>{
+        window.location.href= "index.html";
+    },2000);
     }
 </script>
 </body>

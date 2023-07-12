@@ -684,7 +684,7 @@
     text-decoration: none;
 }
 
-.footer-contact .span-footer:hover,
+.footer-contact,
 .email-footer:hover {
     color: #121bcf;
 }

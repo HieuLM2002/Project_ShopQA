@@ -15,6 +15,7 @@ function handleShow(event) {
     }
   }
 }
+
 if (sidebarList) {
   sidebarList.addEventListener("click", handleShow);
 }
