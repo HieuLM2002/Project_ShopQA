@@ -144,13 +144,13 @@
 
             
             
-          </aside> -->
+          </aside>  -->
             <br><br>
 
           <div class="sidebar-title">
               <i class="fa-solid fa-bars"></i>
               <span>Danh mục bài viết</span>
-            </div>
+          </div>
           <div class="list-category">
             <?php
               while($row_danhmuc =  mysqli_fetch_array($query_danhmuc_bv)){
@@ -167,5 +167,5 @@
                 
               </ul>
           </div>
-        </div>
+</div>
   

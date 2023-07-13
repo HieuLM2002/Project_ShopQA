@@ -82,22 +82,25 @@ $query_product = mysqli_query($connect,$sql_product);
                                 src="../admincp/modules/quanlisp/uploads/<?php echo $row['hinhanh'] ?>"               
                                 />
                             </a>
-                        <div class="price-product">
-                            <div>
-                            <a href="#"><?php echo $row['ten_sanpham'] ?></a><br />
-                            <span><?php echo number_format($row['gia_sanpham'],0,',','.').'đ'?></span>
-                            <del><?php echo number_format($row['giamgia_sanpham'],0,',','.').'đ' ?></del><br>
-                            <span style="text-transform: uppercase;font-size:12px;">Danh mục : <?php echo $row['category_name']?></span>
-                            </div>
+                            <form method="POST" action="../pages/main/themgiohang.php?idsanpham=<?php echo $row['id_sanpham'] ?>">
+                              <div class="price-product">
+                                    <div>
+                                    <a href="san-pham/<?php echo $row['id_sanpham'] ?>.html"><?php echo $row['ten_sanpham'] ?></a><br />
+                                    <span><?php echo number_format($row['gia_sanpham'],0,',','.').'đ'?></span>
+                                    <del><?php echo number_format($row['giamgia_sanpham'],0,',','.').'đ' ?></del><br>
+                                    <span style="text-transform: uppercase;font-size:12px;">Danh mục : <?php echo $row['category_name']?></span>
+                                    </div>
 
-                            <div>
-                            <a href="#">
-                                <div class="circle-icon bgr product-cart">
-                                <i class="fa-solid fa-bag-shopping"></i>
-                                </div>
-                            </a>
-                            </div>
-                        </div>
+                                    <div>
+                                    <button type="submit" name="themgiohang">
+                                        <div class="circle-icon bgr product-cart">
+                                        <i class="fa-solid fa-bag-shopping"></i>
+                                        </div>
+                                    </button>
+                                    </div>
+                                  
+                              </div>
+                            </form>  
                     </div>
                    <?php
                     }

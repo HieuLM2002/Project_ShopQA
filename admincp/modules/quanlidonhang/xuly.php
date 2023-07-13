@@ -26,7 +26,8 @@
     $doanhthu = 0;
     while($row = mysqli_fetch_array($query_lietke_dh)){
       $soluongmua += $row['soluongmua'];
-      $doanhthu += $row['gia_sanpham'];
+      $tongtien = $row['soluongmua']*$row['gia_sanpham'];
+      $doanhthu += $tongtien;
     }
     if(mysqli_num_rows($query_thongke)==0){  // nếu k có đơn hàng của ngày hiện tại
       $soluongban = $soluongmua;
@@ -36,13 +37,13 @@
 
     }elseif(mysqli_num_rows($query_thongke)!=0){  // có ngày hiện tại , chạy vòng lặp lấy ra số liệu ngày hiện tại
       while($row_tk = mysqli_fetch_array($query_thongke)){
-        $soluongban= $row_tk['soluongban']+$soluongban;
+        $soluongban= $row_tk['soluongban']+$soluongmua;
         $doanhthu = $row_tk['doanhthu']+$doanhthu;
         $donhang = $row_tk['donhang']+1;
         $sql_update_thongke = mysqli_query($connect,"UPDATE tbl_thongke SET soluongban='$soluongban',doanhthu='$doanhthu',donhang='$donhang' WHERE ngaydat='$now'");
       }
     }
 
-    header('location:../../index.php?action=quanlydonhang&query=lietke');
+   header('location:../../index.php?action=quanlydonhang&query=lietke');
   }
 ?>

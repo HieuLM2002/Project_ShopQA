@@ -16,15 +16,26 @@
     width: 121%;
     margin-left:6.5%;
   }
+  
   </style>
 <br><br>  
 <div class="back-mainpage">
   <a href="index.html" class="homePage">Trang chủ</a><span style="color:#66a182"> > Giỏ hàng</span>
 </div><br><br>
+<div class="container">
+ 
+  <div class="arrow-steps clearfix">
+    <div class="step current"> <span> <a href="giohang.html" >Giỏ hàng</a></span> </div>
+    <div class="step"> <span><a href="vanchuyen.html" >Vận chuyển</a></span> </div>
+    <div class="step"> <span><a href="thongtinthanhtoan.html" >Thanh toán</a><span> </div>
+    <div class="step"> <span><a href="donhangdadat.html" >Lịch sử đơn hàng</a><span> </div>
+  </div><br>
+ 
+</div><br><br>
 <table class="customers">
-<?php
-if(isset($_SESSION['cart'])){
-?>
+    <?php
+    if(isset($_SESSION['cart'])){
+    ?>
   <tr>
     <th>ID</th>
     <th>Mã sản phẩm</th>
@@ -57,9 +68,9 @@ if(isset($_SESSION['cart'])){
     <td><?php echo number_format($thanhtien,0,',','.').'đ' ?></td>
     <td><a href="../pages/main/themgiohang.php?xoa=<?php echo $cart_item['id'] ?>">Xóa</a></td>
   </tr>
-<?php
-    }
-?>
+    <?php
+        }
+    ?>
   <tr>
         <td colspan='8'>
         <span class="sum-all--product">Tổng tiền: <span class="text-sum"><?php echo  number_format($tongtien,0,',','.').'đ' ?></span>
@@ -72,20 +83,20 @@ if(isset($_SESSION['cart'])){
     }
     if(!isset($_SESSION['cart'])){
 ?>
-<div class="cart-empty">
-  <p><i class="fa-solid fa-bag-shopping"></i> <br><br><br>
-  <span>Không có sản phẩm nào trong giỏ hàng của bạn</span>
-</p>
-</div>
-<?php
-    }
-?>
+    <div class="cart-empty">
+      <p><i class="fa-solid fa-bag-shopping"></i> <br><br><br>
+      <span>Không có sản phẩm nào trong giỏ hàng của bạn</span>
+    </p>
+    </div>
+    <?php
+        }
+    ?>
 </table>
 <?php
       if(isset($_SESSION['dangky']) && isset($_SESSION['cart'])){
         ?>        
 <div class="pay">
-        <a href="../pages/main/thanhtoan.php">Đặt hàng</a>
+        <a href="vanchuyen.html">Hình thức vận chuyển</a>
   </div>       
       <?php       
       }else{

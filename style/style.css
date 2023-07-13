@@ -340,7 +340,12 @@
     height: 95px;
     width : 80px;
 }
-
+.product-box{
+    width: 29%;
+}
+.product-item{
+    width: 100%;
+}
 .text-price {
     width          : 100%;
     display        : flex;
@@ -356,7 +361,11 @@
     margin-bottom     : 5%;
     /* white-space    : nowrap; */
 }
-
+.price-product button{
+    border: none;
+    cursor: pointer;
+    background: none;
+}
 .text-price a,
 .price-product a:hover {
     
@@ -430,8 +439,7 @@
 }
 
 .product-set {
-    display              : flex;
-    justify-content      : space-between;
+  
     /* align-items       : center; */
     /* margin-right      : 10%; */
 }
@@ -442,12 +450,14 @@
 }
 
 .product-box {
-    /* width: 100%; */
+    display              : flex;
+    justify-content      : space-between;
+    width: 100%;
 }
 
 .product-item {
-    /* width       : 100%;
-    margin-right: 6.5%; */
+    width       : 29%;
+    /* margin-right: 6.5%;  */
 }
 
 .product-item img {
@@ -456,29 +466,6 @@
     transition: content 0.5s;
 }
 
-.product-item img#product1:hover {
-    content: url('../imgs/imgShirt/imgShirtHover1.jpg');
-}
-
-.product-item img#product2:hover {
-    content: url('../imgs/imgShirt/imgShirtHover2.jpg');
-}
-
-.product-item img#product3:hover {
-    content: url('../imgs/imgShirt/imgShirtHover3.jpg');
-}
-
-.product-item img#product4:hover {
-    content: url('../imgs/imgShirt/imgShirtHover4.jpg');
-}
-
-.product-item img#product5:hover {
-    content: url('../imgs/imgShirt/imgShirtHover5.jpg');
-}
-
-.product-item img#product6:hover {
-    content: url('../imgs/imgShirt/imgShirtHover6.jpg');
-}
 
 .price-product {
     display        : flex;
@@ -507,6 +494,32 @@
     background: #66a182;
     border    : 1px solid #221F20;
 }
+.wrapper-list{
+    display: flex;
+      width: 100%;
+      background: #252525;
+      justify-content: center;
+      color: white;
+      height: 3%;
+      align-items: center;
+  }
+  .list-page{
+    display: flex;
+    margin-left:4%
+  }
+  .list-page li{
+    list-style-type: none;
+  }
+  .list-page li:hover {
+      background: #66a182;
+  }
+  .list-page a{
+    text-decoration: none;
+    color: white;
+    padding: 4px 15px;
+    border: 1px solid white;
+    line-height: 25px;
+  }
 
 /* banner */
 

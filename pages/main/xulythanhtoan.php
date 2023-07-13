@@ -15,7 +15,7 @@ $sql = "CREATE TABLE IF NOT EXISTS tbl_cart(
     cart_status int,
     cart_date varchar(50),
     cart_payment varchar(50) ,
-    cart_shipping int  
+    cart_shipping int   
 )";
 mysqli_query($connect,$sql);
 $sql = "CREATE TABLE IF NOT EXISTS tbl_cart_details(
@@ -28,7 +28,14 @@ mysqli_query($connect,$sql);
 
 $id_khachhang = $_SESSION['id_khachhang'];
 $code_order = rand(0,9999);
-$insert_cart = "INSERT INTO tbl_cart(id_khachhang,code_cart,cart_status,cart_date) VALUE ('$id_khachhang','$code_order',1,'$dateNow')";
+$cart_payment = $_POST['payment'];
+// lấy id thông tin vận chuyển
+$id_dangky = $_SESSION['id_khachhang'];
+$sql_get_vanchuyen = mysqli_query($connect,"SELECT * FROM tbl_shipping WHERE id_dangky='$id_dangky' LIMIT 1");
+$row_get_vanchuyen= mysqli_fetch_array($sql_get_vanchuyen);
+$id_shipping= $row_get_vanchuyen['id_shipping'];
+
+$insert_cart = "INSERT INTO tbl_cart(id_khachhang,code_cart,cart_status,cart_date,cart_payment,cart_shipping) VALUE ('$id_khachhang','$code_order',1,'$dateNow','$cart_payment','$id_shipping')";
 $cart_query = mysqli_query($connect,$insert_cart);
 if($cart_query){
   foreach($_SESSION['cart'] as $key =>$value){

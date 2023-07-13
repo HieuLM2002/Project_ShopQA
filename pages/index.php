@@ -16,14 +16,14 @@
   </head>
   <body>
     <div class="wrapper">
-     <?php
-     session_start();
-     include("../admincp/config/connect.php");
-     include("../pages/header.php");
-     include("../pages/menu.php");
-     include("../pages/main.php");
-     include("../pages/footer.php");
-?>         
+      <?php
+      session_start();
+      include("../admincp/config/connect.php");
+      include("../pages/header.php");
+      include("../pages/menu.php");
+      include("../pages/main.php");
+      include("../pages/footer.php");
+      ?>           
     </div>
     <script src="../js/main.js"></script>
   </body>

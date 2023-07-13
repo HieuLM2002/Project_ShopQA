@@ -22,13 +22,13 @@ $query_lh= mysqli_query($connect,$sql_lh);
       <h4>LIÊN HỆ</h4>
       <div class="form-contact"> 
         <form action="">
-      <label for="fname">Họ và Tên:</label><br>
-      <input type="text" id="fullname" name="fullname" ><br>
-      <label for="lname">Email:</label><br>
-      <input type="text" id="email" name="email"><br>
-      <label for="opinion">Ý kiến:</label><br>
-      <textarea name="message" ></textarea><br></br>
-      <button type="submit">Gửi liên hệ</button>
+          <label for="fname">Họ và Tên:</label><br>
+          <input type="text" id="fullname" name="fullname" ><br>
+          <label for="lname">Email:</label><br>
+          <input type="text" id="email" name="email"><br>
+          <label for="opinion">Ý kiến:</label><br>
+          <textarea name="message" ></textarea><br></br>
+          <button type="submit">Gửi liên hệ</button>
         </form>
       </div>
     </div>

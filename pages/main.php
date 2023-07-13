@@ -24,7 +24,7 @@
          
        ?>
        
-        <div class="main-content">
+      <div class="main-content">
          <?php
            if(isset($_GET['quanly'])){
             $temp = $_GET['quanly'];
@@ -48,6 +48,17 @@
             include('./main/giohang.php');
            }
            
+           elseif($temp == "vanchuyen"){
+            include('./main/vanchuyen.php');
+           }
+           
+           elseif($temp == "thongtinthanhtoan"){
+            include('./main/thongtinthanhtoan.php');
+           }
+           elseif($temp == "donhangdadat"){
+            include('./main/donhangdadat.php');
+           }
+
            elseif($temp == "thanhtoan"){
             include('./main/thanhtoan.php');
            }
@@ -83,7 +94,10 @@
             $trang = $_GET['idpage'];
             $_SESSION['idpage'] = $trang;
             include("./main/sanphamAll.php");
-           }      
+           } elseif($temp =='trangchu'){   
+            include("index.php");
+           }  
+           
            elseif($temp =='taikhoan'){
             include('./main/thongtintaikhoan/thongtintaikhoan.php');
            }
