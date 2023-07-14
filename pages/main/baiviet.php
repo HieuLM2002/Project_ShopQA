@@ -1,4 +1,12 @@
-
+<style>
+    .product-set--product{
+        width: 133%;
+    }
+    .product-item{
+        width: 100%;
+        line-height: 35px;
+    }
+</style>
 <?php
 
 $sql_bv = "SELECT * FROM tbl_baiviet WHERE tbl_baiviet.id = '$_GET[id]' LIMIT 1";

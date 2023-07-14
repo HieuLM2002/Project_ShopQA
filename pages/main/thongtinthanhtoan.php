@@ -91,15 +91,22 @@
 }
  </style>   
 <div class="back-mainpage">
-  <a href="index.html" class="homePage">Trang chủ</a><span style="color:#66a182"> > Thanh toán</span>
+  <a href="vanchuyen.html" class="homePage">Vận chuyển</a><span style="color:#66a182"> > Thanh toán</span>
 </div><br><br>
 <div class="container">
 <div class="arrow-steps clearfix">
+                   <?php
+                    if(isset($_SESSION['id_khachhang'])){
+                    ?>
     <div class="step done"> <span> <a href="giohang.html" >Giỏ hàng</a></span> </div>
     <div class="step done"> <span><a href="vanchuyen.html" >Vận chuyển</a></span> </div>
     <div class="step  current"> <span><a href="thongtinthanhtoan.html" >Thanh toán</a><span> </div>
     <div class="step"> <span><a href="donhangdadat.html" >Lịch sử đơn hàng</a><span> </div>
+    <?php
+        }
+    ?>
   </div><br>
+ 
 </div><br><br>
 
 <form action="main/xulythanhtoan.php" method="POST">
@@ -167,29 +174,10 @@
                                 }
                             ?>
                         <tr>
-                                <td colspan='6'>
+                                <td colspan='7'>
                                 <span class="sum-all--product">Tổng tiền: <span class="text-sum"><?php echo  number_format($tongtien,0,',','.').'đ' ?></span>
                                 </td>
-                                <td>
-                                <?php
-                            if(isset($_SESSION['dangky']) && isset($_SESSION['cart'])){
-                                ?>        
-                        <div class="pay">
-                                <a href="thongtinthanhtoan.html">Thanh toán</a>
-                        </div>       
-                            <?php       
-                            }else{
-                                if(isset($_SESSION['cart'])){
-                            ?>
-                            <div class="pay">
-                            <a href="../pages/header/dangky.php">Đăng ký đặt hàng</a>
-                            </div>  
-                            <?php
-                            }
-                            }
-                            ?>   
-                        </div>
-                                </td>      
+                                   
                         </tr>
                         <?php 
                             }

@@ -9,7 +9,7 @@
 }
 .product-item{
   margin-bottom  : 6%;
-  width: 29%;
+  width: 32%;
 }
 .price-product a{
 font-size:16px;
@@ -46,21 +46,25 @@ $row_title = mysqli_fetch_array($query_category);
                                 
                                 />
                             </a>
-                        <div class="price-product">
-                            <div>
-                            <a href="#"><?php echo $row_product['ten_sanpham'] ?></a><br />
-                            <span><?php echo number_format($row_product['gia_sanpham'],0,',','.').'đ'?></span><br />
-                            <del><?php echo number_format($row_product['giamgia_sanpham'],0,',','.').'đ' ?></del>
-                            </div>
+                            <form method="POST" action="../pages/main/themgiohang.php?idsanpham=<?php echo $row_product['id_sanpham'] ?>">
+                              <div class="price-product">
+                                    <div>
+                                    <a href="san-pham/<?php echo $row_product['id_sanpham'] ?>.html"><?php echo $row_product['ten_sanpham'] ?></a><br />
+                                    <span><?php echo number_format($row_product['gia_sanpham'],0,',','.').'đ'?></span>
+                                    <del><?php echo number_format($row_product['giamgia_sanpham'],0,',','.').'đ' ?></del><br>
+          
+                                    </div>
 
-                            <div>
-                            <a href="#">
-                                <div class="circle-icon bgr product-cart">
-                                <i class="fa-solid fa-bag-shopping"></i>
-                                </div>
-                            </a>
-                            </div>
-                        </div>
+                                    <div>
+                                    <button type="submit" name="themgiohang">
+                                        <div class="circle-icon bgr product-cart">
+                                        <i class="fa-solid fa-bag-shopping"></i>
+                                        </div>
+                                    </button>
+                                    </div>
+                                  
+                              </div>
+                            </form>  
                     </div>
                    <?php
                     }

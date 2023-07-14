@@ -1,12 +1,12 @@
 
 <?php
-session_start();
-include("../../admincp/config/connect.php");
-require("../../mail/sendmail.php");
-require('../../carbon/autoload.php');
-use Carbon\Carbon;
-use Carbon\CarbonInterval;
-$dateNow= Carbon::now('Asia/Ho_Chi_Minh');
+ session_start();
+ include("../../admincp/config/connect.php");
+ require("../../mail/sendmail.php");
+ require('../../carbon/autoload.php');
+ use Carbon\Carbon;
+ use Carbon\CarbonInterval;
+ $dateNow= Carbon::now('Asia/Ho_Chi_Minh');
 mysqli_select_db($connect,'shop_quanao');
 $sql = "CREATE TABLE IF NOT EXISTS tbl_cart(
     id_cart int primary key auto_increment,
@@ -44,24 +44,24 @@ if($cart_query){
     $insert_order_details = "INSERT INTO tbl_cart_details(id_sanpham,code_cart,soluongmua) VALUE ('$id_sanpham','$code_order','$soluong')";
     mysqli_query($connect,$insert_order_details);
   }
-  // $tieude = "Đặt hàng website BOUTIQUE thành công!";
-  // $noidung = "<p>Cảm ơn quý khách đã đặt hàng của chúng tôi với mã đơn hàng:'$code_order'</p>";
-  // $noidung .= "<h4>Đơn hàng đặt bao gồm :</h4>";
-  // $tongtien = 0;
-  // foreach($_SESSION['cart'] as $key => $val){
-  //   $thanhtien = $val['soluong']*$val['giasp'];
-  //   $tongtien += $thanhtien;
-  //   $noidung .= "<ol style='background: #66a182;padding:20px 20px 20px 50px;'>
-  //            <li>Tên sản phẩm :".$val['tensanpham']."</li>
-  //            <li>Mã sản phẩm :".$val['masp']."</li>
-  //            <li>Giá sản phẩm :".number_format($val['giasp'],0,',','.')."đ</li>
-  //            <li>Số lượng :".$val['soluong']."</li>
-  //            <li>Tổng tiền :".number_format($tongtien,0,',','.')."đ</li>
-  //              </ol>";
-  // }
-  //  $maildathang=$_SESSION['email'];          
-  // $mail = new Mailer();
-  // $mail->dathangmail($tieude,$noidung,$maildathang);
+  $tieude = "Đặt hàng website BOUTIQUE thành công!";
+  $noidung = "<p>Cảm ơn quý khách đã đặt hàng của chúng tôi với mã đơn hàng:'$code_order'</p>";
+  $noidung .= "<h4>Đơn hàng đặt bao gồm :</h4>";
+  $tongtien = 0;
+  foreach($_SESSION['cart'] as $key => $val){
+    $thanhtien = $val['soluong']*$val['giasp'];
+    $tongtien += $thanhtien;
+    $noidung .= "<ol style='background: #66a182;padding:20px 20px 20px 50px;'>
+             <li>Tên sản phẩm :".$val['tensanpham']."</li>
+             <li>Mã sản phẩm :".$val['masp']."</li>
+             <li>Giá sản phẩm :".number_format($val['giasp'],0,',','.')."đ</li>
+             <li>Số lượng :".$val['soluong']."</li>
+             <li>Tổng tiền :".number_format($tongtien,0,',','.')."đ</li>
+               </ol>";
+  }
+   $maildathang=$_SESSION['email'];          
+  $mail = new Mailer();
+  $mail->dathangmail($tieude,$noidung,$maildathang);
 }
 unset($_SESSION['cart']);
 header('location:../thanks.html');

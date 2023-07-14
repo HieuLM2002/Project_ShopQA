@@ -31,7 +31,7 @@
                     </div>      
                     <div class="introduce-content">
                       <ul class="introduce-list">
-                        <li><a href="">Về chúng tôi</a></li>
+                        <li><a href="gioithieu.html">Về chúng tôi</a></li>
                         <li><a href="">Tuyển dụng</a></li>
                         <li><a href="">Hệ thống của hàng</a></li>
                       </ul>
@@ -73,11 +73,11 @@
               </div>
               <div class="footer-bottom--supnav">
               <ul>
-                <li><a href="">Trang chủ</a></li>
-                <li><a href="">Giới thiệu</a></li>
-                <li><a href="">Sản phẩm</a></li>
-                <li><a href="">Tin tức</a></li>
-                <li><a href=""></a>Liên hệ</li>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="gioithieu.html">Giới thiệu</a></li>
+                <li><a href="sanpham.html">Sản phẩm</a></li>
+                <li><a href="tintuc.html">Tin tức</a></li>
+                <li><a href="lienhe.html">Liên hệ</a></li>
               </ul>
               </div>
         </div>

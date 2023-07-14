@@ -4,7 +4,7 @@ mysqli_select_db($connect,'shop_quanao');
 $sql = "CREATE TABLE IF NOT EXISTS tbl_register(
     id_dangky int primary key auto_increment,
     ten_khachhang varchar(250),
-    email varchar(100),
+    email varchar(100) unique,
     diachi  varchar(250),
     matkhau  varchar(100),
     dienthoai  varchar(20)  
@@ -15,20 +15,38 @@ if(isset($_POST['dangky'])){
     $tenkhachhang = $_POST['hovaten'];
     $email = $_POST['email'];
     $dienthoai = $_POST['dienthoai'];
-    $matkhau = sha1($_POST['password']);
+    $matkhau = $_POST['password'];
     $diachi = $_POST['diachi'];
-    if($tenkhachhang!= '' && $email!=""  && $dienthoai!=""  && $matkhau!=""  && $diachi!="" ){
-        $sql="INSERT INTO tbl_register(ten_khachhang,email,diachi,matkhau,dienthoai) 
-        VALUES('$tenkhachhang','$email','$diachi','$matkhau','$dienthoai')";
-         $query = mysqli_query($connect,$sql);
-         if($query){
-            $thanhcong =  'Đăng ký thành công bạn sẽ được chuyển đến trang chủ,vui lòng chờ!';
-            $_SESSION['dangky'] = $tenkhachhang;
-            $_SESSION['email'] = $email;// sử dụng cho phần show tk và gửi mail thanh toán 
-            $_SESSION['id_khachhang'] = mysqli_insert_id($connect);
-            // header('location:../index.html');
-     } 
-    }  
+    
+    if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+        $sql = "SELECT * FROM tbl_register WHERE email = '$email'";
+        $row = mysqli_query($connect,$sql);
+        $count = mysqli_num_rows($row);
+        if($count!=0){
+            $messEmail="Email đã được đăng ký!";
+        }else{
+            if(strlen($matkhau)>=6){
+                $matkhau = sha1($matkhau);
+                if($tenkhachhang!= '' && $email!=""  && $dienthoai!=""  && $matkhau!=""  && $diachi!="" ){
+                    $sql="INSERT INTO tbl_register(ten_khachhang,email,diachi,matkhau,dienthoai) 
+                    VALUES('$tenkhachhang','$email','$diachi','$matkhau','$dienthoai')";
+                     $query = mysqli_query($connect,$sql);
+                     if($query){
+                        $thanhcong =  'Đăng ký thành công bạn sẽ được chuyển đến trang chủ,vui lòng chờ!';
+                        $_SESSION['dangky'] = $tenkhachhang;
+                        $_SESSION['email'] = $email;// sử dụng cho phần show tk và gửi mail thanh toán 
+                        $_SESSION['id_khachhang'] = mysqli_insert_id($connect);
+                        // header('location:../index.html');
+                 } 
+                }  
+            }else{
+                $validatePass="Mật khẩu phải tối đa 6 ký tự!";
+            }
+           
+        }
+    }else{
+        $validate = "Email không hợp lệ,vui lòng nhập lại!";
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -52,7 +70,9 @@ if(isset($_POST['dangky'])){
            
             <div>
             <label for="username">Email</label><br>
-            <input type="text" id="username" name="email" placeholder="Nhập email.."><br><br>
+            <input type="text" id="username" name="email" placeholder="Nhập email.."><br>
+            <span><?php if(isset($validate)){echo $validate;}; if(isset($messEmail)){echo $messEmail;}?></span>
+            <br><br>
             </div>
         
             <div>
@@ -67,7 +87,9 @@ if(isset($_POST['dangky'])){
            
             <div>
             <label for="password">Mật khẩu</label><br>
-            <input type="password" id="password" name="password" placeholder="Nhập mật khẩu.." autocomplete="on"><br><br>
+            <input type="password" id="password" name="password" placeholder="Nhập mật khẩu.." autocomplete="on"><br>
+            <span><?php if(isset($validatePass)){echo $validatePass;}?></spam>
+            <br><br>
             </div>
 
             <div>

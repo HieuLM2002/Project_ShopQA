@@ -9,7 +9,7 @@
 }
 .product-item{
   margin-bottom  : 6%;
-  width:29%;
+  width:32%;
 }
 .price-product a{
 font-size:13px;

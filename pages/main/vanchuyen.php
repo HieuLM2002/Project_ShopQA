@@ -65,13 +65,13 @@ if(isset($_POST['themvanchuyen'])){
 }
 ?>
 <div class="back-mainpage">
-  <a href="index.html" class="homePage">Trang chủ</a><span style="color:#66a182"> > Vận chuyển</span>
+  <a href="giohang.html" class="homePage">Giỏ hàng</a><span style="color:#66a182"> > Vận chuyển</span>
 </div><br><br>
     <?php
      $id_dangky = $_SESSION['id_khachhang'];
      $sql_get_vanchuyen = mysqli_query($connect,"SELECT * FROM tbl_shipping WHERE id_dangky='$id_dangky' LIMIT 1");
      $count = mysqli_num_rows($sql_get_vanchuyen);
-     if($count>0){
+     if($count>0 && isset($_SESSION['id_khachhang'])){
         $row_get_vanchuyen= mysqli_fetch_array($sql_get_vanchuyen);
         $name= $row_get_vanchuyen['name'];
         $phone = $row_get_vanchuyen['phone'];
@@ -86,10 +86,16 @@ if(isset($_POST['themvanchuyen'])){
     ?>
         <div class="container">
             <div class="arrow-steps clearfix">
+                                <?php
+                    if(isset($_SESSION['id_khachhang'])){
+                    ?>
                 <div class="step done"> <span> <a href="giohang.html" >Giỏ hàng</a></span> </div>
                 <div class="step current"> <span><a href="vanchuyen.html" >Vận chuyển</a></span> </div>
                 <div class="step"> <span><a href="thongtinthanhtoan.html" >Thanh toán</a><span> </div>
                 <div class="step"> <span><a href="donhangdadat.html" >Lịch sử đơn hàng</a><span> </div>
+                <?php
+                    }
+                    ?>
             </div>
         </div><br><br>
      

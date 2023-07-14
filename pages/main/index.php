@@ -15,6 +15,11 @@ tbl_product.category_id DESC LIMIT $begin,3";
 $query_product = mysqli_query($connect,$sql_product);
 $data = mysqli_fetch_all($query_product, MYSQLI_ASSOC);
 ?>
+<style>
+  .product-item{
+    width: 32%;
+  }
+  </style>
 <div class="img-sale">
             <a href="#">
               <img src="" alt="img sale" class="img-sale--move" />
@@ -222,13 +227,13 @@ $data = mysqli_fetch_all($query_product, MYSQLI_ASSOC);
           <!-- banner -->
           <div class="banner">
             <div class="banner-content">
-              <a href="#">
+              <a href="sanpham.html">
                 <img src="../imgs/imgBanner/banner1.png" />
               </a>
             </div>
 
             <div class="banner-content">
-              <a href="#">
+              <a href="sanpham.html">
                 <img src="../imgs/imgBanner/banner2.png" />
               </a>
             </div>
@@ -632,7 +637,7 @@ $data = mysqli_fetch_all($query_product, MYSQLI_ASSOC);
 
           <!-- banner sale -->
           <div class="banner-sale">
-            <a href="#">
+            <a href="sanpham.html">
               <img src="../imgs/imgBanner/bannerSaLe.jpg" />
             </a>
           </div>
@@ -691,7 +696,7 @@ $data = mysqli_fetch_all($query_product, MYSQLI_ASSOC);
                                               <?php
                                               for($i=1;$i<=$pages;$i++){
                                               ?>
-                                              <li <?php if($i==$page){echo 'style="background: #66a182;"';}else{ echo '';} ?>><a href="./index.php?quanly=trang&idpage=<?php echo $i ?>"><?php echo $i ?></a></li>
+                                              <li <?php if($i==$page){echo 'style="background: #66a182;"';}else{ echo '';} ?>><a href="./index.php?idpage=<?php echo $i ?>"><?php echo $i ?></a></li>
                                               <?php
                                               }
                                               ?>

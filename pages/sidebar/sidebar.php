@@ -21,8 +21,8 @@
                     <i class="fa-solid fa-caret-down"></i>
                   </div>
                   <ul class="dropdow-menu show">
-                    <li class="nav-item"><a href="#">Hàng mới về</a></li>
-                    <li class="nav-item"><a href="#">Hàng giảm giá</a></li>
+                    <li class="nav-item"><a href="sanpham.html">Hàng mới về</a></li>
+                    <li class="nav-item"><a href="sanpham.html">Hàng giảm giá</a></li>
                   </ul>
                 </li>
                 <?php
@@ -30,14 +30,14 @@
                 ?>
                 
                 <li>
-                  <a href="#">Sản phẩm nổi bật</a>
+                  <a href="sanpham.html">Sản phẩm nổi bật</a>
                 </li>
                 <li>
-                  <a href="">Sản phẩm bán chạy</a>
+                  <a href="sanpham.html">Sản phẩm bán chạy</a>
                 </li>
                 <div class="hide-product--sidebar show">
                   <li>
-                    <a href="">Sản phẩm khuyến mãi</a>
+                    <a href="sanpham.html">Sản phẩm khuyến mãi</a>
                   </li>
                 </div>
                 <li>

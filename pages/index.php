@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="http://localhost/Project_ShopQA/pages/"/>
+    <link rel="icon" href="../imgs/logo-ico.ico">
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="stylesheet" href="../style/backHomePage.css"/>
     <link rel="stylesheet" href="../style/lienhe.css"/>
@@ -12,7 +13,7 @@
       src="https://kit.fontawesome.com/d2a190de21.js"
       crossorigin="anonymous"
     ></script>
-    <title>ShopQA</title>
+    <title>BOUTIQUE</title>
   </head>
   <body>
     <div class="wrapper">

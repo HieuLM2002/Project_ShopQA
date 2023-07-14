@@ -7,23 +7,23 @@ require('../../carbon/autoload.php');
 use Carbon\Carbon;
 use Carbon\CarbonInterval;
 $dateNow= Carbon::now('Asia/Ho_Chi_Minh');
-mysqli_select_db($connect,'shop_quanao');
-$sql = "CREATE TABLE IF NOT EXISTS tbl_cart(
-    id_cart int primary key auto_increment,
-    id_khachhang int,
-    code_cart varchar(20),
-    cart_status int,
-    cart_date varchar(50),
-    cart_payment varchar(50) ,
-    cart_shipping int  
-)";
-mysqli_query($connect,$sql);
-$sql = "CREATE TABLE IF NOT EXISTS tbl_cart_details(
-  id_cart_details int primary key auto_increment,
-  code_cart varchar(20),
-  id_sanpham int,
-  soluongmua int   
-)";
+// mysqli_select_db($connect,'shop_quanao');
+// $sql = "CREATE TABLE IF NOT EXISTS tbl_cart(
+//     id_cart int primary key auto_increment,
+//     id_khachhang int,
+//     code_cart varchar(20),
+//     cart_status int,
+//     cart_date varchar(50),
+//     cart_payment varchar(50) ,
+//     cart_shipping int  
+// )";
+// mysqli_query($connect,$sql);
+// $sql = "CREATE TABLE IF NOT EXISTS tbl_cart_details(
+//   id_cart_details int primary key auto_increment,
+//   code_cart varchar(20),
+//   id_sanpham int,
+//   soluongmua int   
+// )";
 mysqli_query($connect,$sql);
 
 $id_khachhang = $_SESSION['id_khachhang'];

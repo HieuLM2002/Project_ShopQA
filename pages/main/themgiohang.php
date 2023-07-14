@@ -64,20 +64,19 @@ if(isset($_SESSION['cart']) && isset($_GET['xoa'])){
    }
 }
 //xóa tất cả
-if(isset($_GET['xoatatca']) && $_GET['xoatatca']== 1){
+if(isset($_GET['xoatatca']) && $_GET['xoatatca']== 1 ){
     unset($_SESSION['cart']);
     header('location:../giohang.html');
 }
 // thêm sp vào giỏ hàng
 
-if(isset($_POST['themgiohang'])){
+if( isset($_POST['themgiohang']) ){
     $id=$_GET['idsanpham'];
     $soluong = 1;
     $sql = "SELECT * FROM tbl_product WHERE id_sanpham ='".$id."' LIMIT 1";
     $query = mysqli_query($connect,$sql);
     $row = mysqli_fetch_array($query);
     if($row){
-       // session_destroy();
        $new_product = array(array('tensanpham'=>$row['ten_sanpham'],'id'=>$id,
         'soluong'=>$soluong,'giasp'=>$row['gia_sanpham'],'hinhanh'=>$row['hinhanh'],'masp'=>$row['ma_sanpham']));
 

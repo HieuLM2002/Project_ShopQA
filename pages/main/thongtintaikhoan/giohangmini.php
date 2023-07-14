@@ -19,7 +19,6 @@
 }
 .tbl-cart td,th{
     border          : 1px solid #ddd;
-    padding         : 8px;
     background-color: #66a182;
     color: white;
     text-align:center;

@@ -62,10 +62,11 @@ while($row_detail = mysqli_fetch_array($query_detail)){
            <p><input type="submit" name="themgiohang" value="Thêm vào giỏ hàng"></p>
         </div>
     </form>
-</div>
+</div><br><br><br><br>
+<div class="back-mainpage">
+  <span style="color:#66a182">Thông tin sản phẩm</span>
+</div><br><br>
+<p><?php echo $row_detail['noidung'] ?></p>
 <?php
 }
 ?>
-<div>
-    <p>Hello</p>
-</div>

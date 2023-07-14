@@ -1,6 +1,6 @@
 <style>
- .back-mainpage{
-  width: 100%;
+ .back-mainpage , .product-title{
+  width: 133%;
 }  
 .product-set--product{
   display: flex;
@@ -30,6 +30,12 @@ text-decoration: none;
   margin-bottom:10px;
 }
 
+    .product-item h2{
+  font-size: 16px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 </style>
 <?php
 // đem category_id của product( sản phẩm) so sánh với category_id của tbl category(bảng danh mục) và tiếp tục lấy ra category_id (có id sp = id ng dùng nhập)
@@ -49,9 +55,9 @@ $row_title = mysqli_fetch_array($query_category);
               <div class="product-title">
                 <h4> <?php echo $row_title['tendanhmuc_baiviet'] ?></h4>
               </div>
-            
+                 
                 <div class="product-set--product">
-                    <?php
+                <?php
                     while($row_bv = mysqli_fetch_array($query_bv)){
                     ?>
                     <div class="product-item">
@@ -63,9 +69,10 @@ $row_title = mysqli_fetch_array($query_category);
                             </a><br>
                             <p><?php echo $row_bv['tomtat'] ?></p>
                     </div>
-                   <?php
+                    <?php
                     }
                     ?>
                 </div>
+                
             </div>    
 </div>                    

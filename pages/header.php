@@ -1,11 +1,12 @@
 <?php
 //  session_start();
 if(isset($_GET['dangxuat']) && $_GET['dangxuat'] == 1 ){
+  //  unset($_SESSION['cart']);
     unset($_SESSION['dangky']);
     header('location:index.html');
 }
 $count = 0;
-if(isset($_SESSION['cart'])){
+if(isset($_SESSION['cart'])&& isset($_SESSION['id_khachhang'])){
     $count = count($_SESSION['cart']);
 }
 ?>

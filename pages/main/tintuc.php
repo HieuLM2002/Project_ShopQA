@@ -30,7 +30,12 @@ text-decoration: none;
   height: 220px;
   margin-bottom:10px;
 }
-
+.product-item h2{
+  font-size: 16px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 </style>
 <?php
 
@@ -55,7 +60,7 @@ $query_bv = mysqli_query($connect,$sql_bv);
                                 <img
                                 src="../admincp/modules/quanlibaiviet/uploads/<?php echo $row_bv['hinhanh'] ?>"        
                                 />
-                                <p>Tên bài viết:<?php echo $row_bv['tenbaiviet']?></p>
+                                <p>Tên bài viết: <b><?php echo $row_bv['tenbaiviet']?></b></p>
                             </a><br>
                             <p><?php echo $row_bv['tomtat'] ?></p>
                     </div>

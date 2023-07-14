@@ -23,18 +23,22 @@
   <a href="index.html" class="homePage">Trang chủ</a><span style="color:#66a182"> > Giỏ hàng</span>
 </div><br><br>
 <div class="container">
- 
+ <?php
+ if(isset($_SESSION['id_khachhang'])){
+ ?>
   <div class="arrow-steps clearfix">
     <div class="step current"> <span> <a href="giohang.html" >Giỏ hàng</a></span> </div>
     <div class="step"> <span><a href="vanchuyen.html" >Vận chuyển</a></span> </div>
     <div class="step"> <span><a href="thongtinthanhtoan.html" >Thanh toán</a><span> </div>
     <div class="step"> <span><a href="donhangdadat.html" >Lịch sử đơn hàng</a><span> </div>
   </div><br>
- 
+ <?php
+ }
+ ?>
 </div><br><br>
 <table class="customers">
     <?php
-    if(isset($_SESSION['cart'])){
+    if(isset($_SESSION['cart']) && isset($_SESSION['id_khachhang'])){
     ?>
   <tr>
     <th>ID</th>
