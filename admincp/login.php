@@ -36,12 +36,12 @@ if(isset($_POST['dangnhap'])){
             <h3>Đăng nhập Admin</h3><br>
             <div>
             <label for="username">Tên tài khoản</label><br>
-            <input type="text" id="username" name="username" placeholder="Nhập tên tài khoản.."><br><br>
+            <input type="text" id="username" name="username" value="admin1" placeholder="Nhập tên tài khoản.."><br><br>
             </div>
             <br>
             <div>
             <label for="password">Mật khẩu</label><br>
-            <input type="password" id="password" name="password" placeholder="Nhập mật khẩu.." autocomplete="on"><br><br>
+            <input type="password" id="password" name="password" value="123456" placeholder="Nhập mật khẩu.." autocomplete="on"><br><br>
             </div>
             <br>
             <button type="submit" name="dangnhap" class="btn-login">Đăng nhập</button>
