@@ -138,6 +138,10 @@
                  admin_status varchar(100)
                 )";
                 mysqli_query($connect,$sql);
+                $us="admin1";
+                $pw=sha1(123456);
+                $sql_pw="INSERT INTO tbl_admin (username,password) VALUES('$us','$pw')";
+                mysqli_query($connect,$sql_pw);
 
       include("../pages/header.php");
       include("../pages/menu.php");
