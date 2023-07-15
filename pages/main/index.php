@@ -1,4 +1,5 @@
 <?php
+
 if(isset($_GET['idpage'])){
      $page = $_GET['idpage'];
 }else{

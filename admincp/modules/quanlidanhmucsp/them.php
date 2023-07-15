@@ -1,11 +1,11 @@
 <?php
-mysqli_select_db($connect,'shop_quanao');
-$sql = "CREATE TABLE IF NOT EXISTS tbl_category(
-    category_id int primary key auto_increment,
-    category_name varchar(100),
-    category_order int
-)";
-mysqli_query($connect,$sql);
+// mysqli_select_db($connect,'shop_quanao');
+// $sql = "CREATE TABLE IF NOT EXISTS tbl_category(
+//     category_id int primary key auto_increment,
+//     category_name varchar(100),
+//     category_order int
+// )";
+// mysqli_query($connect,$sql);
 ?>
 <h4>Thêm danh mục sản phẩm</h4>
 <table class="customers">

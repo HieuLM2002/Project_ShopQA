@@ -20,6 +20,125 @@
       <?php
       session_start();
       include("../admincp/config/connect.php");
+      mysqli_select_db($connect,'shop_quanao');
+      $sql = "CREATE TABLE IF NOT EXISTS tbl_danhmucbaiviet(
+        id_baiviet int primary key auto_increment,
+        tendanhmuc_baiviet varchar(255),
+        thutu int
+    )";
+    mysqli_query($connect,$sql);
+    mysqli_select_db($connect,'shop_quanao');
+    $sql = "CREATE TABLE IF NOT EXISTS tbl_baiviet(
+        id int primary key auto_increment,
+        tenbaiviet varchar(255),
+        tomtat MEDIUMTEXT,
+        noidung  LONGTEXT,
+        id_danhmuc int ,
+        tinhtrang  int,
+        hinhanh  varchar(255),
+        CONSTRAINT FK_danhmucbaiviet FOREIGN KEY (id_danhmuc) REFERENCES tbl_danhmucbaiviet(id_baiviet)
+    )";
+    mysqli_query($connect,$sql);
+    mysqli_select_db($connect,'shop_quanao');
+      $sql = "CREATE TABLE IF NOT EXISTS tbl_category(
+          category_id int primary key auto_increment,
+          category_name varchar(100),
+          category_order int
+      )";
+      mysqli_query($connect,$sql);
+
+
+      mysqli_select_db($connect,'shop_quanao');
+        $sql = "CREATE TABLE IF NOT EXISTS tbl_product(
+            id_sanpham int primary key auto_increment,
+            ten_sanpham varchar(250),
+            ma_sanpham varchar(250),
+            gia_sanpham  varchar(250),
+            giamgia_sanpham  varchar(250),
+            soluong  int,
+            hinhanh  varchar(150),
+            tomtat TINYTEXT ,
+            noidung TEXT,
+            tinhtrang int,
+            category_id int,
+            CONSTRAINT FK_category FOREIGN KEY (category_id) REFERENCES tbl_category(category_id)
+        )";
+        mysqli_query($connect,$sql);
+
+
+        mysqli_select_db($connect,'shop_quanao');
+        $sql = "CREATE TABLE IF NOT EXISTS tbl_register(
+            id_dangky int primary key auto_increment,
+            ten_khachhang varchar(250),
+            email varchar(100) unique,
+            diachi  varchar(250),
+            matkhau  varchar(100),
+            dienthoai  varchar(20)  
+        )";
+        mysqli_query($connect,$sql);
+
+        mysqli_select_db($connect,'shop_quanao');
+        $sql = "CREATE TABLE IF NOT EXISTS tbl_shipping(
+            id_shipping int primary key auto_increment,
+          name varchar(100),
+          phone varchar(50),
+            address varchar(200),
+            note  varchar(255),
+            id_dangky int
+        )";
+        mysqli_query($connect,$sql);
+        mysqli_select_db($connect,'shop_quanao');
+              $sql = "CREATE TABLE IF NOT EXISTS tbl_cart(
+                id_cart int primary key auto_increment,
+                id_khachhang int ,
+                code_cart varchar(20),
+                cart_status int,
+                cart_date varchar(50),
+                cart_payment varchar(50) ,
+                cart_shipping int,
+                CONSTRAINT FK_khachhang FOREIGN KEY (id_khachhang) REFERENCES tbl_register(id_dangky) ,
+                CONSTRAINT FK_cartshipping FOREIGN KEY (cart_shipping) REFERENCES tbl_shipping(id_shipping)  
+            )";
+            mysqli_query($connect,$sql);
+
+            $sql = "CREATE TABLE IF NOT EXISTS tbl_cart_details(
+              id_cart_details int primary key auto_increment,
+              code_cart varchar(20),
+              id_sanpham int,
+              soluongmua int,
+              CONSTRAINT FK_cart FOREIGN KEY (id_sanpham) REFERENCES tbl_product(id_sanpham)  
+            )";
+            mysqli_query($connect,$sql);
+
+
+            mysqli_select_db($connect,'shop_quanao');
+              $sql = "CREATE TABLE IF NOT EXISTS tbl_lienhe(
+                  id int primary key auto_increment,
+                  thongtinlienhe TEXT
+              )";
+              mysqli_query($connect,$sql);
+
+           
+
+                mysqli_select_db($connect,'shop_quanao');
+                $sql = "CREATE TABLE IF NOT EXISTS tbl_thongke(
+                  id int primary key auto_increment,
+                    ngaydat varchar(30),
+                  donhang int,
+                  doanhthu varchar(100),
+                  soluongban int
+                )";
+                mysqli_query($connect,$sql);
+
+                mysqli_select_db($connect,'shop_quanao');
+                $sql = "CREATE TABLE IF NOT EXISTS tbl_admin(
+                  admin_id int primary key auto_increment,
+                   username varchar(100),
+                  password varchar(100),
+                 admin_status varchar(100)
+                )";
+                mysqli_query($connect,$sql);
+
       include("../pages/header.php");
       include("../pages/menu.php");
       include("../pages/main.php");

@@ -1,11 +1,11 @@
 <?php
-mysqli_select_db($connect,'shop_quanao');
-$sql = "CREATE TABLE IF NOT EXISTS tbl_danhmucbaiviet(
-    id_baiviet int primary key auto_increment,
-    tendanhmuc_baiviet varchar(255),
-    thutu int
-)";
-mysqli_query($connect,$sql);
+// mysqli_select_db($connect,'shop_quanao');
+// $sql = "CREATE TABLE IF NOT EXISTS tbl_danhmucbaiviet(
+//     id_baiviet int primary key auto_increment,
+//     tendanhmuc_baiviet varchar(255),
+//     thutu int
+// )";
+// mysqli_query($connect,$sql);
 ?>
 <h4>Thêm danh mục bài viết</h4>
 <table class="customers">

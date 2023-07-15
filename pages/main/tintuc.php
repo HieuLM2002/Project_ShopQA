@@ -12,7 +12,7 @@
 .product-item{
     margin-bottom: 6%;
     width: 30%;
-    border: 1px solid black;
+    border: 1px solid #1a4a2f;
     height: auto;
     padding: 18px;
     text-align : center;

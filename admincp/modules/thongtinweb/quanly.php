@@ -1,11 +1,6 @@
 
 <?php
-mysqli_select_db($connect,'shop_quanao');
-$sql = "CREATE TABLE IF NOT EXISTS tbl_lienhe(
-    id int primary key auto_increment,
-    thongtinlienhe TEXT
-)";
-mysqli_query($connect,$sql);
+
 
 $sql_lh= "SELECT * FROM tbl_lienhe WHERE id = 1";
 $query_lh= mysqli_query($connect,$sql_lh);

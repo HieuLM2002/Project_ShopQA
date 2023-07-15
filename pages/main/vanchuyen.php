@@ -1,14 +1,14 @@
 <?php
-mysqli_select_db($connect,'shop_quanao');
-$sql = "CREATE TABLE IF NOT EXISTS tbl_shipping(
-    id_shipping int primary key auto_increment,
-   name varchar(100),
-   phone varchar(50),
-    address varchar(200),
-    note  varchar(255),
-    id_dangky int
-)";
-mysqli_query($connect,$sql);
+// mysqli_select_db($connect,'shop_quanao');
+// $sql = "CREATE TABLE IF NOT EXISTS tbl_shipping(
+//     id_shipping int primary key auto_increment,
+//    name varchar(100),
+//    phone varchar(50),
+//     address varchar(200),
+//     note  varchar(255),
+//     id_dangky int
+// )";
+// mysqli_query($connect,$sql);
 ?>
 <style>
     .pay{

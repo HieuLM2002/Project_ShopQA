@@ -1,15 +1,15 @@
 <?php
-mysqli_select_db($connect,'shop_quanao');
-$sql = "CREATE TABLE IF NOT EXISTS tbl_baiviet(
-    id int primary key auto_increment,
-    tenbaiviet varchar(255),
-    tomtat MEDIUMTEXT,
-    noidung  LONGTEXT,
-    id_danhmuc int,
-    tinhtrang  int,
-    hinhanh  varchar(255)
-)";
-mysqli_query($connect,$sql);
+// mysqli_select_db($connect,'shop_quanao');
+// $sql = "CREATE TABLE IF NOT EXISTS tbl_baiviet(
+//     id int primary key auto_increment,
+//     tenbaiviet varchar(255),
+//     tomtat MEDIUMTEXT,
+//     noidung  LONGTEXT,
+//     id_danhmuc int FOREIGN KEY REFERENCES tbl_danhmucbaiviet(id_baiviet),
+//     tinhtrang  int,
+//     hinhanh  varchar(255)
+// )";
+// mysqli_query($connect,$sql);
 ?>
 <h4>Thêm bài viết</h4>
 <table class="customers">

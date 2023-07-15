@@ -1,15 +1,15 @@
 <?php
 include('../../admincp/config/connect.php');
-mysqli_select_db($connect,'shop_quanao');
-$sql = "CREATE TABLE IF NOT EXISTS tbl_register(
-    id_dangky int primary key auto_increment,
-    ten_khachhang varchar(250),
-    email varchar(100) unique,
-    diachi  varchar(250),
-    matkhau  varchar(100),
-    dienthoai  varchar(20)  
-)";
-mysqli_query($connect,$sql);
+// mysqli_select_db($connect,'shop_quanao');
+// $sql = "CREATE TABLE IF NOT EXISTS tbl_register(
+//     id_dangky int primary key auto_increment,
+//     ten_khachhang varchar(250),
+//     email varchar(100) unique,
+//     diachi  varchar(250),
+//     matkhau  varchar(100),
+//     dienthoai  varchar(20)  
+// )";
+// mysqli_query($connect,$sql);
  session_start();
 if(isset($_POST['dangky'])){
     $tenkhachhang = $_POST['hovaten'];
