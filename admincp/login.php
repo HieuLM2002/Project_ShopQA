@@ -1,9 +1,11 @@
 <?php
+
 session_start();
 include('config/connect.php');
 if(isset($_POST['dangnhap'])){
     $taikhoan = $_POST['username'];
     $matkhau = sha1($_POST['password']);
+    
     // chọn tất cả từ tbl admin đk username phải băng username và pw = mk;
     $sql = "SELECT * FROM tbl_admin WHERE username = '$taikhoan'  AND password = '$matkhau'   LIMIT 1";
     $row = mysqli_query($connect,$sql);

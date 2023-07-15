@@ -17,7 +17,7 @@ $data = mysqli_fetch_all($query_product, MYSQLI_ASSOC);
 ?>
 <style>
   .product-item{
-    width: 32%;
+    width: 29%;
   }
   </style>
 <div class="img-sale">
