@@ -7,7 +7,7 @@ if(isset($_POST['dangnhap'])){
     $matkhau = sha1($_POST['password']);
     
     // chọn tất cả từ tbl admin đk username phải băng username và pw = mk;
-    $sql = "SELECT * FROM tbl_admin WHERE username = '$taikhoan'  AND password = '$matkhau'   LIMIT 1";
+    $sql = "SELECT * FROM tbl_admin WHERE username = '$taikhoan'  AND password = '$matkhau' LIMIT 1";
     $row = mysqli_query($connect,$sql);
     //đếm số dòng của row
     $count = mysqli_num_rows($row);

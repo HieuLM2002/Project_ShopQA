@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,6 +21,27 @@
       <?php
       session_start();
       include("../admincp/config/connect.php");
+      mysqli_query($connect,$sql);
+      mysqli_select_db($connect,'shop_quanao');
+        $sql = "CREATE TABLE IF NOT EXISTS tbl_category(
+            category_id int primary key auto_increment,
+            category_name varchar(100),
+            category_order int
+        )";
+        mysqli_query($connect,$sql);
+
+        $sql = "SELECT * FROM tbl_category";
+          $query = mysqli_query($connect,$sql);
+          $nums= mysqli_num_rows($query);
+            if($nums == 0){
+              $sql="INSERT INTO tbl_category (category_name,category_order) VALUES
+              ('Áo',1),
+              ('QUẦN & JUMPSUIT',2),
+              ('Đầm',3),
+              ('Chân Váy',4)";
+              mysqli_query($connect,$sql);
+              }
+
       mysqli_select_db($connect,'shop_quanao');
       $sql = "CREATE TABLE IF NOT EXISTS tbl_danhmucbaiviet(
         id_baiviet int primary key auto_increment,
@@ -27,6 +49,18 @@
         thutu int
     )";
     mysqli_query($connect,$sql);
+        $sql = "SELECT * FROM tbl_danhmucbaiviet";
+          $query = mysqli_query($connect,$sql);
+          $nums= mysqli_num_rows($query);
+            if($nums == 0){
+              $sql="INSERT INTO tbl_danhmucbaiviet (tendanhmuc_baiviet,thutu) VALUES
+              ('Thời trang công sở',1),
+              ('Xu hướng thời trang',2)
+              ";
+              mysqli_query($connect,$sql);
+              }
+
+
     mysqli_select_db($connect,'shop_quanao');
     $sql = "CREATE TABLE IF NOT EXISTS tbl_baiviet(
         id int primary key auto_increment,
@@ -38,14 +72,7 @@
         hinhanh  varchar(255),
         CONSTRAINT FK_danhmucbaiviet FOREIGN KEY (id_danhmuc) REFERENCES tbl_danhmucbaiviet(id_baiviet)
     )";
-    mysqli_query($connect,$sql);
-    mysqli_select_db($connect,'shop_quanao');
-      $sql = "CREATE TABLE IF NOT EXISTS tbl_category(
-          category_id int primary key auto_increment,
-          category_name varchar(100),
-          category_order int
-      )";
-      mysqli_query($connect,$sql);
+   
 
 
       mysqli_select_db($connect,'shop_quanao');
@@ -117,7 +144,13 @@
                   thongtinlienhe TEXT
               )";
               mysqli_query($connect,$sql);
-
+              $sql = "SELECT * FROM tbl_lienhe LIMIT 1";
+              $query = mysqli_query($connect,$sql);
+               $num= mysqli_num_rows($query);
+                if($num == 0){
+                  $sql_pw="INSERT INTO tbl_lienhe (thongtinlienhe) VALUES('Liên hệ chúng tôi')";
+                  mysqli_query($connect,$sql_pw);
+                }
            
 
                 mysqli_select_db($connect,'shop_quanao');

@@ -11,6 +11,44 @@ if($page == '' || $page==1){
 }else{
   $begin = ($page*3)-3;
 }
+  $sql = "SELECT * FROM tbl_product";
+$query = mysqli_query($connect,$sql);
+ $nums= mysqli_num_rows($query);
+  if($nums == 0){
+    $sql="INSERT INTO tbl_product (ten_sanpham,ma_sanpham,gia_sanpham,giamgia_sanpham,soluong,hinhanh,tomtat,noidung,tinhtrang,category_id) VALUES
+    ('SET ÁO SƠ MI LỤA','1','833000','1190000',5,'1688645383imgShirt4.jpg',' ','
+       <pre> Dòng sản phẩm	  You
+        Nhóm sản phẩm        	Áo
+        Cổ áo	                Cổ tàu trụ
+        Tay áo	              Tay dài
+        Kiểu dáng	            Xuông
+        Độ dài	               Dài thường
+        Họa tiết	             Trơn
+        Chất liệu	             Lụa</pre>','Kích hoạt',1),
+
+        ('ÁO SƠ MI TENCEL DÁNG OVERSIZE','2','1590000','0',5,'1688646366imgShirt1.jpg',' ','  
+            Dòng sản phẩm	Ladies
+            Nhóm sản phẩm	Áo
+            Cổ áo	Cổ đức
+            Tay áo	Tay ngắn
+            Kiểu dáng	Suông
+            Độ dài	Oversize
+            Họa tiết	Trơn
+            Chất liệu	Lụa','Kích hoạt',1),
+
+            ('ÁO SƠ MI TAY LỬNG','3','833000','1190000',5,'1689424142imgShirt2.jpg',' ','         
+                Dòng sản phẩm	Ladies
+                Nhóm sản phẩm	Áo
+                Cổ áo	Cổ đức
+                Tay áo	Tay lỡ
+                Kiểu dáng	Ôm
+                Độ dài	Dài thường
+                Họa tiết	Trơn
+                Chất liệu	Thô','Kích hoạt',1)  
+    ";
+    mysqli_query($connect,$sql);
+  }
+
 $sql_product = "SELECT * FROM tbl_product,tbl_category WHERE tbl_product.category_id = tbl_category.category_id  ORDER BY 
 tbl_product.category_id DESC LIMIT $begin,3";
 $query_product = mysqli_query($connect,$sql_product);
