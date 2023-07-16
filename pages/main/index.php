@@ -36,7 +36,7 @@ $query = mysqli_query($connect,$sql);
             Họa tiết	Trơn
             Chất liệu	Lụa','Kích hoạt',1),
 
-            ('ÁO SƠ MI TAY LỬNG','3','833000','1190000',5,'1689424142imgShirt2.jpg',' ','         
+            ('ÁO SƠ MI TAY LỬNG','3','833000','1190000',5,'1688645555imgShirt2.jpg',' ','         
                 Dòng sản phẩm	Ladies
                 Nhóm sản phẩm	Áo
                 Cổ áo	Cổ đức
