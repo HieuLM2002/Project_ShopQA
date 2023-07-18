@@ -123,8 +123,7 @@
                 cart_date varchar(50),
                 cart_payment varchar(50) ,
                 cart_shipping int,
-                CONSTRAINT FK_khachhang FOREIGN KEY (id_khachhang) REFERENCES tbl_register(id_dangky) ,
-                CONSTRAINT FK_cartshipping FOREIGN KEY (cart_shipping) REFERENCES tbl_shipping(id_shipping)  
+                CONSTRAINT FK_khachhang FOREIGN KEY (id_khachhang) REFERENCES tbl_register(id_dangky)      
             )";
             mysqli_query($connect,$sql);
 
